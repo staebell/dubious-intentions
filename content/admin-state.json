@@ -1,0 +1,25 @@
+{
+  "availability": {
+    "mint": false,
+    "egg_white": true,
+    "jalapeno": true,
+    "serrano": false,
+    "champagne": false
+  },
+  "tonightMenu": {
+    "enabled": false,
+    "title": "BBQ with the Kellys",
+    "tagline": "Handpicked and suspiciously good.",
+    "drinkIds": [
+      "strawberry-frose",
+      "agavero-sunset",
+      "mint-lime-slush",
+      "aperol-spritz",
+      "french-75",
+      "painkiller",
+      "pisco-sour",
+      "pineapple-mint-daiquiri",
+      "singapore-sling"
+    ]
+  }
+}

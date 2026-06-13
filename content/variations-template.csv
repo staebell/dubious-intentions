@@ -1,0 +1,19 @@
+variation_id,parent_drink_id,variation_name,change_text,ingredients_text,image_file,sort_order
+mule-kentucky,moscow-mule,Kentucky Mule,Swap vodka for bourbon,Bourbon | lime or lime juice | ginger beer,,1
+mule-mexican,moscow-mule,Mexican Mule,Swap vodka for tequila,Tequila | lime or lime juice | ginger beer,,2
+mule-gin,moscow-mule,Gin Mule,Swap vodka for gin,Gin | lime or lime juice | ginger beer,,3
+mule-strawberry-basil,moscow-mule,Strawberry Basil Mule,Add strawberry and basil to the mule,Vodka | lime or lime juice | ginger beer | strawberries | basil,,4
+mule-blue,moscow-mule,Blue Mule,Add blue curacao for a bright blue mule,Vodka | blue curacao | lime or lime juice | ginger beer,,5
+mule-blackberry-elderflower,moscow-mule,Blackberry Mule with Elderflower,Add blackberry and elderflower for floral fruit notes,Vodka | blackberry | elderflower liqueur | lime or lime juice | ginger beer,,6
+mule-cherry,moscow-mule,Cherry Mule,Add cherry flavor to the mule build,Vodka | cherry juice or cherry syrup | lime or lime juice | ginger beer,,7
+mojito-pineapple,mojito,Pineapple Mojito,Use pineapple variation,White rum | pineapple juice | fresh lime | sugar | club soda | mint leaves,,1
+mojito-strawberry,mojito,Strawberry Mojito,Use strawberry variation,White rum | strawberries | lime juice | simple syrup | club soda | mint leaves,,2
+mojito-coconut,mojito,Coconut Mojito,Use coconut variation,White rum | coconut rum | lime juice | cream of coconut | club soda | mint,,3
+mojito-frozen,mojito,Frozen Mojito,Blend classic with ice,White rum | lime juice | simple syrup | mint | ice blended,,4
+mojito-blackberry,mojito,Blackberry Mojito,Add muddled blackberry for a darker fruit profile,White rum | blackberries | lime juice | simple syrup | club soda | mint,,5
+mojito-vodka-blueberry,mojito,Vodka Blueberry Mojito,Swap rum for vodka and add blueberries,Vodka | blueberries | lime juice | simple syrup | club soda | mint,,6
+french-75-gin,french-75,Gin French 75,Swap cognac for gin,Gin | lemon juice | simple syrup | champagne,,1
+french-75-royal,french-75,Royal 75,Use Grand Marnier finish,Cognac | lemon juice | simple syrup | champagne | Grand Marnier float,,2
+bloody-mary-spicy,bloody-mary,Spicy Bloody Mary,Turn up the heat with extra hot sauce and jalapeno,Vodka | tomato juice | lemon juice | Worcestershire | hot sauce | jalapeno slices | celery salt,,1
+bloody-mary-mezcal,bloody-mary,Smoky Bloody Mary,Swap vodka for mezcal for smoky depth,Mezcal | tomato juice | lemon juice | Worcestershire | hot sauce | celery salt,,2
+bloody-mary-green,bloody-mary,Green Bloody Mary,Use tomatillo/green mix and cilantro,Vodka | tomatillo mix | lime juice | cilantro | hot sauce | celery salt,,3
