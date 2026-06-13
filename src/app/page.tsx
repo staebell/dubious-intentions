@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { generatedCatalog } from "@/data/catalog.generated";
 
 type ThemeKey =
   | "known-offenders"
@@ -50,6 +51,7 @@ const SLOT_ITEM_HEIGHT = 88;
 const SLOT_REPEATS = 180;
 const SLOT_WINDOW_TOP = SLOT_ITEM_HEIGHT;
 const SLOT_SPIN_DURATION_MS = 6400;
+const SETTINGS_CACHE_KEY = "dubious-intentions-admin-state";
 
 function randomIndex(length: number) {
   return Math.floor(Math.random() * length);
@@ -261,6 +263,24 @@ const defaultSettings: Settings = {
   },
 };
 
+function normalizeSettings(input: Partial<Settings> | null | undefined): Settings {
+  return {
+    availability: {
+      mint: input?.availability?.mint ?? defaultSettings.availability.mint,
+      egg_white: input?.availability?.egg_white ?? defaultSettings.availability.egg_white,
+      jalapeno: input?.availability?.jalapeno ?? defaultSettings.availability.jalapeno,
+      serrano: input?.availability?.serrano ?? defaultSettings.availability.serrano,
+      champagne: input?.availability?.champagne ?? defaultSettings.availability.champagne,
+    },
+    tonightMenu: {
+      enabled: input?.tonightMenu?.enabled ?? defaultSettings.tonightMenu.enabled,
+      title: input?.tonightMenu?.title || defaultSettings.tonightMenu.title,
+      tagline: input?.tonightMenu?.tagline || defaultSettings.tonightMenu.tagline,
+      drinkIds: Array.isArray(input?.tonightMenu?.drinkIds) ? input.tonightMenu.drinkIds : [],
+    },
+  };
+}
+
 const FEATURED_THEME_KEYS = [
   "known-offenders",
   "tequila-sunday",
@@ -285,9 +305,15 @@ function sortByName(items: Drink[]) {
 }
 
 export default function HomePage() {
-  const [catalogThemes, setCatalogThemes] = useState<Theme[]>(fallbackThemes);
-  const [catalogDrinks, setCatalogDrinks] = useState<Drink[]>(fallbackDrinks);
-  const [catalogQuotes, setCatalogQuotes] = useState<Quote[]>(fallbackQuotes);
+  const [catalogThemes] = useState<Theme[]>(
+    generatedCatalog.themes.length > 0 ? (generatedCatalog.themes as Theme[]) : fallbackThemes
+  );
+  const [catalogDrinks] = useState<Drink[]>(
+    generatedCatalog.drinks.length > 0 ? (generatedCatalog.drinks as Drink[]) : fallbackDrinks
+  );
+  const [catalogQuotes] = useState<Quote[]>(
+    generatedCatalog.quotes.length > 0 ? (generatedCatalog.quotes as Quote[]) : fallbackQuotes
+  );
   const [settings, setSettings] = useState<Settings>(defaultSettings);
   const [settingsHydrated, setSettingsHydrated] = useState(false);
   const [quoteIndex, setQuoteIndex] = useState(0);
@@ -322,6 +348,15 @@ export default function HomePage() {
     let active = true;
     async function loadSharedSettings() {
       try {
+        const cached = window.localStorage.getItem(SETTINGS_CACHE_KEY);
+        if (cached && active) {
+          setSettings(normalizeSettings(JSON.parse(cached) as Partial<Settings>));
+        }
+      } catch {
+        // Ignore broken cached state
+      }
+
+      try {
         const response = await fetch("/api/admin-state");
         if (!response.ok) {
           if (active) setSettingsHydrated(true);
@@ -329,16 +364,7 @@ export default function HomePage() {
         }
         const data = (await response.json()) as Partial<Settings>;
         if (!active) return;
-        setSettings({
-          availability: { ...defaultSettings.availability, ...(data.availability ?? {}) },
-          tonightMenu: {
-            ...defaultSettings.tonightMenu,
-            ...(data.tonightMenu ?? {}),
-            drinkIds: Array.isArray(data.tonightMenu?.drinkIds)
-              ? data.tonightMenu.drinkIds
-              : [],
-          },
-        });
+        setSettings(normalizeSettings(data));
       } catch {
         // Keep defaults if request fails
       } finally {
@@ -352,44 +378,12 @@ export default function HomePage() {
   }, []);
 
   useEffect(() => {
-    let active = true;
-    async function loadCatalog() {
-      try {
-        const response = await fetch("/api/catalog");
-        if (!response.ok) return;
-        const data = await response.json();
-        if (!active) return;
-        if (Array.isArray(data.themes) && data.themes.length > 0) {
-          setCatalogThemes(
-            data.themes.map((theme: Theme) => ({
-              key: theme.key,
-              name: theme.name,
-              intro: theme.intro,
-              order: theme.order ?? 0,
-            }))
-          );
-        }
-        if (Array.isArray(data.drinks) && data.drinks.length > 0) {
-          setCatalogDrinks(
-            data.drinks.map((drink: Drink) => ({
-              ...drink,
-              themes: Array.isArray(drink.themes) ? drink.themes : [],
-              availability: Array.isArray(drink.availability) ? drink.availability : [],
-            }))
-          );
-        }
-        if (Array.isArray(data.quotes) && data.quotes.length > 0) {
-          setCatalogQuotes(data.quotes);
-        }
-      } catch {
-        // fallback data stays active
-      }
+    try {
+      window.localStorage.setItem(SETTINGS_CACHE_KEY, JSON.stringify(settings));
+    } catch {
+      // Ignore local cache failures
     }
-    loadCatalog();
-    return () => {
-      active = false;
-    };
-  }, []);
+  }, [settings]);
 
   useEffect(() => {
     if (!settingsHydrated) return;

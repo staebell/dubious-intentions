@@ -1,12 +1,10 @@
-import { NextResponse } from "next/server";
-import { loadCatalogFromCsv } from "@/lib/catalog-loader";
+import { generatedCatalog } from "@/data/catalog.generated";
 
 export async function GET() {
   try {
-    const catalog = await loadCatalogFromCsv();
-    return NextResponse.json(catalog);
+    return Response.json(generatedCatalog);
   } catch (error) {
-    return NextResponse.json(
+    return Response.json(
       {
         error: "Failed to load catalog from CSV templates.",
         detail: error instanceof Error ? error.message : "Unknown error",

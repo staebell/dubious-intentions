@@ -1,6 +1,3 @@
-import { promises as fs } from "node:fs";
-import path from "node:path";
-
 export type AdminState = {
   availability: {
     mint: boolean;
@@ -38,11 +35,7 @@ type PartialAdminState = {
   tonightMenu?: Partial<AdminState["tonightMenu"]>;
 };
 
-function stateFilePath() {
-  return path.join(process.cwd(), "content", "admin-state.json");
-}
-
-function sanitize(input: PartialAdminState | null | undefined): AdminState {
+export function sanitizeAdminState(input: PartialAdminState | null | undefined): AdminState {
   const availability: Partial<AdminState["availability"]> = input?.availability ?? {};
   const tonightMenu: Partial<AdminState["tonightMenu"]> = input?.tonightMenu ?? {};
   return {
@@ -60,22 +53,6 @@ function sanitize(input: PartialAdminState | null | undefined): AdminState {
       drinkIds: Array.isArray(tonightMenu.drinkIds)
         ? tonightMenu.drinkIds.filter((value: unknown): value is string => typeof value === "string")
         : [],
-    },
+      },
   };
-}
-
-export async function readAdminState(): Promise<AdminState> {
-  try {
-    const raw = await fs.readFile(stateFilePath(), "utf8");
-    return sanitize(JSON.parse(raw) as PartialAdminState);
-  } catch {
-    return defaultAdminState;
-  }
-}
-
-export async function writeAdminState(input: PartialAdminState): Promise<AdminState> {
-  const sanitized = sanitize(input);
-  await fs.mkdir(path.join(process.cwd(), "content"), { recursive: true });
-  await fs.writeFile(stateFilePath(), `${JSON.stringify(sanitized, null, 2)}\n`, "utf8");
-  return sanitized;
 }
