@@ -811,6 +811,40 @@ h3 {
   cursor: pointer;
 }
 
+.install-panel {
+  max-width: 560px;
+}
+
+.install-steps {
+  display: grid;
+  gap: 12px;
+}
+
+.install-step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.install-step-number {
+  width: 32px;
+  height: 32px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #ffe6c3;
+  font-weight: 700;
+}
+
+.install-step p {
+  margin: 4px 0 0;
+  color: #f4e5d5;
+  line-height: 1.5;
+}
+
 .slot-result-name {
   margin: 0 auto;
   min-height: 1.5em;

@@ -46,6 +46,11 @@ type Quote = {
   order?: number;
 };
 
+type BeforeInstallPromptEvent = Event & {
+  prompt: () => Promise<void>;
+  userChoice: Promise<{ outcome: "accepted" | "dismissed"; platform: string }>;
+};
+
 const ADMIN_PASSWORD = "0519";
 const SLOT_ITEM_HEIGHT = 88;
 const SLOT_REPEATS = 180;
@@ -683,6 +688,11 @@ export default function HomePage() {
   const [shotListOpen, setShotListOpen] = useState(false);
   const [spiritHubOpen, setSpiritHubOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [installPromptEvent, setInstallPromptEvent] = useState<BeforeInstallPromptEvent | null>(
+    null
+  );
+  const [installHelpOpen, setInstallHelpOpen] = useState(false);
+  const [isStandaloneApp, setIsStandaloneApp] = useState(false);
 
   useEffect(() => {
     slotOffsetRef.current = slotOffset;
@@ -711,13 +721,103 @@ export default function HomePage() {
     };
   }, []);
 
+  useEffect(() => {
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/sw.js").catch(() => {
+        // best-effort registration
+      });
+    }
+
+    const media = window.matchMedia("(display-mode: standalone)");
+    const legacyMedia = media as MediaQueryList & {
+      addListener?: (listener: (event: MediaQueryListEvent) => void) => void;
+      removeListener?: (listener: (event: MediaQueryListEvent) => void) => void;
+    };
+    const checkStandalone = () => {
+      const standalone =
+        media.matches ||
+        Boolean((navigator as Navigator & { standalone?: boolean }).standalone);
+      setIsStandaloneApp(standalone);
+    };
+
+    const onBeforeInstallPrompt = (event: Event) => {
+      event.preventDefault();
+      setInstallPromptEvent(event as BeforeInstallPromptEvent);
+    };
+
+    const onInstalled = () => {
+      setIsStandaloneApp(true);
+      setInstallPromptEvent(null);
+      setInstallHelpOpen(false);
+      setToast("Added to your home screen.");
+    };
+
+    checkStandalone();
+    if ("addEventListener" in media) {
+      media.addEventListener("change", checkStandalone);
+    } else {
+      legacyMedia.addListener?.(checkStandalone);
+    }
+    window.addEventListener("beforeinstallprompt", onBeforeInstallPrompt);
+    window.addEventListener("appinstalled", onInstalled);
+
+    return () => {
+      if ("removeEventListener" in media) {
+        media.removeEventListener("change", checkStandalone);
+      } else {
+        legacyMedia.removeListener?.(checkStandalone);
+      }
+      window.removeEventListener("beforeinstallprompt", onBeforeInstallPrompt);
+      window.removeEventListener("appinstalled", onInstalled);
+    };
+  }, []);
+
   const shotWheelWinnerDrink = useMemo(
     () => catalogDrinks.find((drink) => drink.id === shotWheelWinnerId) ?? null,
     [catalogDrinks, shotWheelWinnerId]
   );
 
+  const installCopy = useMemo(() => {
+    if (typeof navigator === "undefined") {
+      return {
+        title: "Add to Phone",
+        steps: ["Open your browser menu.", "Choose Add to Home Screen or Install App."],
+      };
+    }
+    const ua = navigator.userAgent.toLowerCase();
+    const isIOS = /iphone|ipad|ipod/.test(ua);
+    const isSafari = /safari/.test(ua) && !/crios|fxios|edgios|chrome|android/.test(ua);
+    if (isIOS && isSafari) {
+      return {
+        title: "Add to iPhone",
+        steps: ["Tap the Share button in Safari.", "Choose Add to Home Screen."],
+      };
+    }
+    return {
+      title: "Add to Phone",
+      steps: ["Open your browser menu.", "Choose Install App or Add to Home Screen."],
+    };
+  }, []);
+
   function scrollToHub() {
     document.getElementById("hub")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  async function openInstallFlow() {
+    if (isStandaloneApp) {
+      setToast("It is already living on this phone.");
+      return;
+    }
+    if (installPromptEvent) {
+      await installPromptEvent.prompt();
+      const result = await installPromptEvent.userChoice;
+      if (result.outcome === "accepted") {
+        setToast("Nice. Added to your phone.");
+      }
+      setInstallPromptEvent(null);
+      return;
+    }
+    setInstallHelpOpen(true);
   }
 
   function openAdminFromMenu() {
@@ -1003,6 +1103,11 @@ export default function HomePage() {
             <button type="button" className="pill" onClick={runGlobalSurprise}>
               Surprise Me
             </button>
+            {!isStandaloneApp ? (
+              <button type="button" className="pill" onClick={openInstallFlow}>
+                Add to Phone
+              </button>
+            ) : null}
           </div>
           <div className="cover-quote">
             <div
@@ -1533,6 +1638,32 @@ export default function HomePage() {
                 >
                   {option.label}
                 </button>
+              ))}
+            </div>
+          </article>
+        </aside>
+      ) : null}
+
+      {installHelpOpen ? (
+        <aside className="drawer">
+          <div className="drawer-backdrop" onClick={() => setInstallHelpOpen(false)} />
+          <article className="drawer-panel install-panel">
+            <div className="drawer-head">
+              <div>
+                <p className="eyebrow">Web App</p>
+                <h3>{installCopy.title}</h3>
+              </div>
+              <button className="ghost-button" onClick={() => setInstallHelpOpen(false)} type="button">
+                Close
+              </button>
+            </div>
+            <p className="admin-copy">A quick shortcut so this opens more like an app from the home screen.</p>
+            <div className="recipe-block install-steps">
+              {installCopy.steps.map((step, index) => (
+                <div key={step} className="install-step">
+                  <span className="install-step-number">{index + 1}</span>
+                  <p>{step}</p>
+                </div>
               ))}
             </div>
           </article>
