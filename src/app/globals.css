@@ -827,6 +827,11 @@ h3 {
   align-items: start;
 }
 
+.install-step-body {
+  display: grid;
+  gap: 12px;
+}
+
 .install-step-number {
   width: 32px;
   height: 32px;
@@ -843,6 +848,20 @@ h3 {
   margin: 4px 0 0;
   color: #f4e5d5;
   line-height: 1.5;
+}
+
+.install-step-image-wrap {
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.26);
+}
+
+.install-step-image {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .slot-result-name {

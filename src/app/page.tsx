@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { generatedCatalog } from "@/data/catalog.generated";
 
@@ -44,6 +45,12 @@ type Quote = {
   source: string;
   location?: string;
   order?: number;
+};
+
+type InstallStep = {
+  text: string;
+  image?: string;
+  alt?: string;
 };
 
 type BeforeInstallPromptEvent = Event & {
@@ -777,25 +784,41 @@ export default function HomePage() {
     [catalogDrinks, shotWheelWinnerId]
   );
 
-  const installCopy = useMemo(() => {
+  const installCopy = useMemo<{ title: string; steps: InstallStep[] }>(() => {
     if (typeof navigator === "undefined") {
       return {
         title: "Add to Phone",
-        steps: ["Open your browser menu.", "Choose Add to Home Screen or Install App."],
+        steps: [
+          { text: "Open your browser menu." },
+          { text: "Choose Add to Home Screen or Install App." },
+        ],
       };
     }
     const ua = navigator.userAgent.toLowerCase();
     const isIOS = /iphone|ipad|ipod/.test(ua);
-    const isSafari = /safari/.test(ua) && !/crios|fxios|edgios|chrome|android/.test(ua);
-    if (isIOS && isSafari) {
+    if (isIOS) {
       return {
         title: "Add to iPhone",
-        steps: ["Tap the Share button in Safari.", "Choose Add to Home Screen."],
+        steps: [
+          {
+            text: "Tap View More.",
+            image: "/install-step-view-more.jpg",
+            alt: "iPhone share menu with View More highlighted",
+          },
+          {
+            text: "Tap Add to Home Screen.",
+            image: "/install-step-home-screen.png",
+            alt: "iPhone browser menu with Add to Home Screen highlighted",
+          },
+        ],
       };
     }
     return {
       title: "Add to Phone",
-      steps: ["Open your browser menu.", "Choose Install App or Add to Home Screen."],
+      steps: [
+        { text: "Open your browser menu." },
+        { text: "Choose Install App or Add to Home Screen." },
+      ],
     };
   }, []);
 
@@ -1079,6 +1102,18 @@ export default function HomePage() {
           >
             Shot Machine
           </button>
+          {!isStandaloneApp ? (
+            <button
+              type="button"
+              className="ghost-button"
+              onClick={() => {
+                setMenuOpen(false);
+                void openInstallFlow();
+              }}
+            >
+              Add to Phone
+            </button>
+          ) : null}
           <button
             type="button"
             className="ghost-button"
@@ -1103,11 +1138,6 @@ export default function HomePage() {
             <button type="button" className="pill" onClick={runGlobalSurprise}>
               Surprise Me
             </button>
-            {!isStandaloneApp ? (
-              <button type="button" className="pill" onClick={openInstallFlow}>
-                Add to Phone
-              </button>
-            ) : null}
           </div>
           <div className="cover-quote">
             <div
@@ -1660,9 +1690,22 @@ export default function HomePage() {
             <p className="admin-copy">A quick shortcut so this opens more like an app from the home screen.</p>
             <div className="recipe-block install-steps">
               {installCopy.steps.map((step, index) => (
-                <div key={step} className="install-step">
+                <div key={`${installCopy.title}-${index}`} className="install-step">
                   <span className="install-step-number">{index + 1}</span>
-                  <p>{step}</p>
+                  <div className="install-step-body">
+                    <p>{step.text}</p>
+                    {step.image ? (
+                      <div className="install-step-image-wrap">
+                        <Image
+                          src={step.image}
+                          alt={step.alt || step.text}
+                          width={1200}
+                          height={1600}
+                          className="install-step-image"
+                        />
+                      </div>
+                    ) : null}
+                  </div>
                 </div>
               ))}
             </div>
