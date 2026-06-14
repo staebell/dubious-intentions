@@ -609,14 +609,14 @@ h3 {
 }
 
 .slot-image {
-  width: 100%;
-  height: 72px;
+  width: min(176px, 68%);
+  height: 64px;
   border-radius: 12px;
   border: 1px solid rgba(113, 69, 18, 0.22);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: rgba(255, 254, 247, 0.94);
+  background-color: #ffffff;
   box-shadow:
     inset 0 0 0 1px rgba(255, 255, 255, 0.68),
     0 8px 16px rgba(63, 33, 4, 0.18);
@@ -819,11 +819,25 @@ h3 {
 }
 
 @media (max-width: 430px) {
+  .drawer-head {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: start;
+    align-items: start;
+    padding-right: 58px;
+  }
+
+  .drawer-head .ghost-button {
+    justify-self: start;
+    margin-top: 4px;
+  }
+
   .slot-machine {
     padding-right: 72px;
   }
 
   .slot-machine-shell {
+    width: min(100%, 344px);
     padding: 16px 14px 18px;
   }
 

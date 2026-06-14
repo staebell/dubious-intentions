@@ -704,6 +704,28 @@ export default function HomePage() {
     return typeof override === "number" ? override : drink.sort;
   }
 
+  function getShotMachineImageUrl(drink: Drink) {
+    if (!drink.imageFile) return "";
+    return drink.isShot ? `/images/slot-machine/${drink.imageFile}` : `/images/drinks/${drink.imageFile}`;
+  }
+
+  function getShotMachineArtStyle(imageFile?: string) {
+    if (!imageFile) return undefined;
+    const slotOverrides: Record<string, { backgroundSize?: string; backgroundPosition?: string }> = {
+      "shot-red-headed-slut.webp": { backgroundSize: "auto 130%", backgroundPosition: "center 30%" },
+      "shot-washington-apple.webp": { backgroundSize: "114% auto", backgroundPosition: "center" },
+      "shot-red-snapper.webp": { backgroundSize: "120% auto", backgroundPosition: "center" },
+      "shot-stop-light.webp": { backgroundSize: "118% auto", backgroundPosition: "center" },
+      "shot-tequila-slammer.webp": { backgroundSize: "116% auto", backgroundPosition: "center" },
+      "shot-irish-car-bomb.webp": { backgroundSize: "114% auto", backgroundPosition: "center" },
+      "shot-jager-bomb.webp": { backgroundSize: "114% auto", backgroundPosition: "center" },
+      "shot-vegas-bomb.webp": { backgroundSize: "auto 124%", backgroundPosition: "center 24%" },
+      "shot-nac-bomb.webp": { backgroundSize: "114% auto", backgroundPosition: "center" },
+      "shot-flaming-dr-pepper.webp": { backgroundSize: "118% auto", backgroundPosition: "center" },
+    };
+    return slotOverrides[imageFile];
+  }
+
   function getDrinkArtStyle(imageFile?: string) {
     if (!imageFile) return undefined;
     const cropOverrides: Record<
@@ -1370,8 +1392,8 @@ export default function HomePage() {
                           <div
                             className={`slot-image ${isSelected ? "zoom-in" : ""}`}
                             style={{
-                              backgroundImage: `url(/images/drinks/${drink.imageFile ?? ""})`,
-                              ...getDrinkArtStyle(drink.imageFile),
+                              backgroundImage: `url(${getShotMachineImageUrl(drink)})`,
+                              ...getShotMachineArtStyle(drink.imageFile),
                             }}
                           />
                         </div>
