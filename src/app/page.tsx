@@ -710,14 +710,21 @@ export default function HomePage() {
       string,
       { backgroundSize?: string; backgroundPosition?: string }
     > = {
-      "shot-red-headed-slut.png": { backgroundSize: "contain", backgroundPosition: "center top" },
-      "moscow-mule.png": { backgroundSize: "contain", backgroundPosition: "center top" },
-      "old-fashioned.png": { backgroundSize: "contain", backgroundPosition: "center top" },
-      "negroni.png": { backgroundSize: "contain", backgroundPosition: "center top" },
-      "coconut-pineapple-sour.png": { backgroundSize: "contain", backgroundPosition: "center top" },
-      "white-russian.png": { backgroundSize: "contain", backgroundPosition: "center top" },
-      "boulevardier.png": { backgroundSize: "contain", backgroundPosition: "center top" },
+      "shot-red-headed-slut.webp": { backgroundSize: "contain", backgroundPosition: "center top" },
+      "moscow-mule.webp": { backgroundSize: "contain", backgroundPosition: "center top" },
+      "old-fashioned.webp": { backgroundSize: "contain", backgroundPosition: "center top" },
+      "negroni.webp": { backgroundSize: "contain", backgroundPosition: "center top" },
+      "coconut-pineapple-sour.webp": { backgroundSize: "contain", backgroundPosition: "center top" },
+      "white-russian.webp": { backgroundSize: "contain", backgroundPosition: "center top" },
+      "boulevardier.webp": { backgroundSize: "contain", backgroundPosition: "center top" },
     };
+    if (imageFile.startsWith("shot-")) {
+      return {
+        backgroundSize: "contain",
+        backgroundPosition: "center",
+        ...cropOverrides[imageFile],
+      };
+    }
     return cropOverrides[imageFile];
   }
 
