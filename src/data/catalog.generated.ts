@@ -97,7 +97,7 @@ export const generatedCatalog = {
       "isShot": false,
       "themeSortOverrides": {
         "known-offenders": 1,
-        "tequila-sunday": 5
+        "tequila-sunday": 3
       }
     },
     {
@@ -114,7 +114,9 @@ export const generatedCatalog = {
       "sort": 2,
       "imageFile": "pisco-sour.webp",
       "isShot": false,
-      "themeSortOverrides": {}
+      "themeSortOverrides": {
+        "known-offenders": 3
+      }
     },
     {
       "id": "sugar-cookie-martini",
@@ -128,7 +130,9 @@ export const generatedCatalog = {
       "sort": 3,
       "imageFile": "sugar-cookie-martini.webp",
       "isShot": false,
-      "themeSortOverrides": {}
+      "themeSortOverrides": {
+        "known-offenders": 4
+      }
     },
     {
       "id": "sidecar",
@@ -142,7 +146,9 @@ export const generatedCatalog = {
       "sort": 4,
       "imageFile": "sidecar.webp",
       "isShot": false,
-      "themeSortOverrides": {}
+      "themeSortOverrides": {
+        "known-offenders": 5
+      }
     },
     {
       "id": "horsefeather",
@@ -156,7 +162,9 @@ export const generatedCatalog = {
       "sort": 5,
       "imageFile": "horsefeather.webp",
       "isShot": false,
-      "themeSortOverrides": {}
+      "themeSortOverrides": {
+        "known-offenders": 6
+      }
     },
     {
       "id": "cadillac-margarita",
@@ -170,7 +178,9 @@ export const generatedCatalog = {
       "sort": 6,
       "imageFile": "cadillac-margarita.webp",
       "isShot": false,
-      "themeSortOverrides": {}
+      "themeSortOverrides": {
+        "tequila-sunday": 1
+      }
     },
     {
       "id": "pineapple-jalapeno-margarita",
@@ -186,7 +196,9 @@ export const generatedCatalog = {
       "sort": 7,
       "imageFile": "pineapple-jalapeno-margarita.webp",
       "isShot": false,
-      "themeSortOverrides": {}
+      "themeSortOverrides": {
+        "tequila-sunday": 2
+      }
     },
     {
       "id": "serrano-pineapple-margarita",
@@ -449,7 +461,9 @@ export const generatedCatalog = {
       "sort": 20,
       "imageFile": "cherry-spritz.webp",
       "isShot": false,
-      "themeSortOverrides": {}
+      "themeSortOverrides": {
+        "known-offenders": 7
+      }
     },
     {
       "id": "spicy-coconut-margarita",
@@ -465,7 +479,9 @@ export const generatedCatalog = {
       "sort": 21,
       "imageFile": "spicy-coconut-margarita.webp",
       "isShot": false,
-      "themeSortOverrides": {}
+      "themeSortOverrides": {
+        "known-offenders": 2
+      }
     },
     {
       "id": "hot-smoky-mezcal-margarita",

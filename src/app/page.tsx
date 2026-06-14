@@ -494,6 +494,7 @@ export default function HomePage() {
 
   function openDrink(id: string, returnThemeKey?: string) {
     setShotListOpen(false);
+    setShotRewardOpen(false);
     setShotWheelOpen(false);
     setSpiritHubOpen(false);
     if (returnThemeKey) setSelectedThemeKey(returnThemeKey);
@@ -677,6 +678,7 @@ export default function HomePage() {
   const [shotWheelWinnerId, setShotWheelWinnerId] = useState<string | null>(null);
   const [slotWinnerIndex, setSlotWinnerIndex] = useState<number | null>(null);
   const [slotHighlight, setSlotHighlight] = useState(false);
+  const [shotRewardOpen, setShotRewardOpen] = useState(false);
   const [leverPulled, setLeverPulled] = useState(false);
   const [shotListOpen, setShotListOpen] = useState(false);
   const [spiritHubOpen, setSpiritHubOpen] = useState(false);
@@ -685,6 +687,38 @@ export default function HomePage() {
   useEffect(() => {
     slotOffsetRef.current = slotOffset;
   }, [slotOffset]);
+
+  useEffect(() => {
+    const historyApi = window.history as History & { scrollRestoration?: "auto" | "manual" };
+    const previousRestoration = historyApi.scrollRestoration;
+    if ("scrollRestoration" in historyApi) {
+      historyApi.scrollRestoration = "manual";
+    }
+    if (window.location.hash === "#hub") {
+      window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
+    }
+    const resetScroll = () => {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    };
+    resetScroll();
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(resetScroll);
+    });
+    return () => {
+      if ("scrollRestoration" in historyApi && previousRestoration) {
+        historyApi.scrollRestoration = previousRestoration;
+      }
+    };
+  }, []);
+
+  const shotWheelWinnerDrink = useMemo(
+    () => catalogDrinks.find((drink) => drink.id === shotWheelWinnerId) ?? null,
+    [catalogDrinks, shotWheelWinnerId]
+  );
+
+  function scrollToHub() {
+    document.getElementById("hub")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
 
   function openAdminFromMenu() {
     setMenuOpen(false);
@@ -767,6 +801,7 @@ export default function HomePage() {
     setSlotWinnerIndex(null);
     setShotWheelWinnerName(null);
     setShotWheelWinnerId(null);
+    setShotRewardOpen(false);
     slotOffsetRef.current = SLOT_WINDOW_TOP;
     setSlotOffset(SLOT_WINDOW_TOP);
     setLeverPulled(false);
@@ -814,6 +849,10 @@ export default function HomePage() {
     setShotWheelWinnerName(pendingWinner.drink.name);
     setShotWheelWinnerId(pendingWinner.drink.id);
     setLeverPulled(false);
+    const revealTimer = window.setTimeout(() => {
+      setShotRewardOpen(true);
+    }, 240);
+    tickTimersRef.current.push(revealTimer);
     if (typeof navigator !== "undefined" && "vibrate" in navigator) {
       navigator.vibrate([22, 26, 44]);
     }
@@ -832,6 +871,7 @@ export default function HomePage() {
     setSlotWinnerIndex(null);
     setShotWheelWinnerName(null);
     setShotWheelWinnerId(null);
+    setShotRewardOpen(false);
     const winnerIndex = randomIndex(shotDrinks.length);
     const currentCenterIndex = Math.max(1, Math.round(slotOffsetRef.current / SLOT_ITEM_HEIGHT));
     const currentShotIndex = ((currentCenterIndex % shotDrinks.length) + shotDrinks.length) % shotDrinks.length;
@@ -957,9 +997,9 @@ export default function HomePage() {
             remember.
           </p>
           <div className="cover-actions">
-            <a className="enter-button" href="#hub">
+            <button type="button" className="enter-button" onClick={scrollToHub}>
               Enter the Menu
-            </a>
+            </button>
             <button type="button" className="pill" onClick={runGlobalSurprise}>
               Surprise Me
             </button>
@@ -1389,13 +1429,23 @@ export default function HomePage() {
                       const isSelected = idx === slotWinnerIndex && slotHighlight;
                       return (
                         <div key={id} className={`slot-cell ${isSelected ? "is-selected" : ""}`}>
-                          <div
-                            className={`slot-image ${isSelected ? "zoom-in" : ""}`}
-                            style={{
-                              backgroundImage: `url(${getShotMachineImageUrl(drink)})`,
-                              ...getShotMachineArtStyle(drink.imageFile),
-                            }}
-                          />
+                          <div className={`slot-tile ${isSelected ? "is-selected" : ""}`}>
+                            <div
+                              className={`slot-thumb ${isSelected ? "zoom-in" : ""}`}
+                              style={{
+                                backgroundImage: `url(${getShotMachineImageUrl(drink)})`,
+                                ...getShotMachineArtStyle(drink.imageFile),
+                              }}
+                            />
+                            <p className="slot-name">{drink.name}</p>
+                            <div
+                              className={`slot-thumb ${isSelected ? "zoom-in" : ""}`}
+                              style={{
+                                backgroundImage: `url(${getShotMachineImageUrl(drink)})`,
+                                ...getShotMachineArtStyle(drink.imageFile),
+                              }}
+                            />
+                          </div>
                         </div>
                       );
                     })}
@@ -1413,18 +1463,45 @@ export default function HomePage() {
                   <span className="slot-lever-image" aria-hidden="true" />
                 </button>
               </div>
-              <button
-                type="button"
-                className={`slot-result-name ${slotHighlight && shotWheelWinnerName ? "visible" : ""}`}
-                onClick={() => {
-                  if (!shotWheelWinnerId) return;
-                  openDrink(shotWheelWinnerId);
-                }}
-                disabled={!shotWheelWinnerId}
-              >
-                {shotWheelWinnerName ?? ""}
-              </button>
             </div>
+            {shotRewardOpen && shotWheelWinnerDrink ? (
+              <div className="reveal-overlay">
+                <div className="drawer-backdrop" onClick={() => setShotRewardOpen(false)} />
+                <div className="reveal-panel slot-win-panel">
+                  <div className="drawer-head">
+                    <div>
+                      <h3 className="slot-win-title">You Win</h3>
+                      <p className="slot-win-copy">
+                        Or maybe you lose, shots can really go either way
+                      </p>
+                    </div>
+                    <button
+                      className="ghost-button"
+                      type="button"
+                      onClick={() => setShotRewardOpen(false)}
+                    >
+                      Back
+                    </button>
+                  </div>
+                  <button
+                    type="button"
+                    className="slot-win-image"
+                    onClick={() => openDrink(shotWheelWinnerDrink.id)}
+                    style={{
+                      backgroundImage: `url(/images/drinks/${shotWheelWinnerDrink.imageFile ?? ""})`,
+                      ...getDrinkArtStyle(shotWheelWinnerDrink.imageFile),
+                    }}
+                  />
+                  <button
+                    type="button"
+                    className="slot-win-name"
+                    onClick={() => openDrink(shotWheelWinnerDrink.id)}
+                  >
+                    {shotWheelWinnerDrink.name}
+                  </button>
+                </div>
+              </div>
+            ) : null}
           </article>
         </aside>
       ) : null}
