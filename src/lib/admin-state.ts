@@ -24,7 +24,7 @@ export const defaultAdminState: AdminState = {
   },
   tonightMenu: {
     enabled: false,
-    title: "Tonight's Menu",
+    title: "Tonight's Damage",
     tagline: "Handpicked and suspiciously good.",
     drinkIds: [],
   },
