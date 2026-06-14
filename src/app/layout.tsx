@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  applicationName: "Dubious Intentions",
   title: "Dubious Intentions",
   description: "A stylized house cocktail menu with theme browsing and night controls.",
   manifest: "/manifest.webmanifest",
