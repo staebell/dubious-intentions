@@ -5,31 +5,26 @@
   "type": "module",
   "scripts": {
     "predev": "node scripts/generate-catalog.mjs",
-    "dev": "vinext dev",
+    "dev": "next dev",
     "prebuild": "node scripts/generate-catalog.mjs",
-    "build": "vinext build",
-    "start": "vinext start",
+    "build": "next build",
+    "start": "next start",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
   },
   "dependencies": {
     "next": "16.2.6",
     "react": "19.2.7",
-    "react-dom": "19.2.7"
+    "react-dom": "19.2.7",
+    "@vercel/blob": "^2.0.0"
   },
   "devDependencies": {
-    "@cloudflare/vite-plugin": "^1.37.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@vitejs/plugin-react": "^6.0.2",
-    "@vitejs/plugin-rsc": "^0.5.26",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
     "tailwindcss": "^4",
-    "typescript": "^5",
-    "vinext": "^0.0.50",
-    "vite": "^8.0.13",
-    "wrangler": "^4.92.0"
+    "typescript": "^5"
   }
 }

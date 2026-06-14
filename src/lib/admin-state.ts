@@ -56,3 +56,7 @@ export function sanitizeAdminState(input: PartialAdminState | null | undefined):
       },
   };
 }
+
+export function serializeAdminState(state: AdminState) {
+  return `${JSON.stringify(state, null, 2)}\n`;
+}

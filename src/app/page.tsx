@@ -263,6 +263,47 @@ const defaultSettings: Settings = {
   },
 };
 
+function hydrateThemes(): Theme[] {
+  return generatedCatalog.themes.map((theme) => ({
+    key: theme.key,
+    name: theme.name,
+    intro: theme.intro,
+    order: theme.order,
+  }));
+}
+
+function hydrateDrinks(): Drink[] {
+  return generatedCatalog.drinks.map((drink) => ({
+    id: drink.id,
+    name: drink.name,
+    description: drink.description,
+    themes: [...drink.themes],
+    ingredients: drink.ingredients,
+    availability: [...drink.availability],
+    sort: drink.sort,
+    imageFile: drink.imageFile,
+    variations: "variations" in drink && drink.variations
+      ? drink.variations.map((variation) => ({
+          name: variation.name,
+          change: variation.change,
+        }))
+      : undefined,
+    isShot: drink.isShot,
+    themeSortOverrides: drink.themeSortOverrides
+      ? { ...drink.themeSortOverrides }
+      : undefined,
+  }));
+}
+
+function hydrateQuotes(): Quote[] {
+  return generatedCatalog.quotes.map((quote) => ({
+    text: quote.text,
+    source: quote.source,
+    location: quote.location,
+    order: quote.order,
+  }));
+}
+
 function normalizeSettings(input: Partial<Settings> | null | undefined): Settings {
   return {
     availability: {
@@ -305,15 +346,9 @@ function sortByName(items: Drink[]) {
 }
 
 export default function HomePage() {
-  const [catalogThemes] = useState<Theme[]>(
-    generatedCatalog.themes.length > 0 ? (generatedCatalog.themes as Theme[]) : fallbackThemes
-  );
-  const [catalogDrinks] = useState<Drink[]>(
-    generatedCatalog.drinks.length > 0 ? (generatedCatalog.drinks as Drink[]) : fallbackDrinks
-  );
-  const [catalogQuotes] = useState<Quote[]>(
-    generatedCatalog.quotes.length > 0 ? (generatedCatalog.quotes as Quote[]) : fallbackQuotes
-  );
+  const [catalogThemes] = useState<Theme[]>(hydrateThemes);
+  const [catalogDrinks] = useState<Drink[]>(hydrateDrinks);
+  const [catalogQuotes] = useState<Quote[]>(hydrateQuotes);
   const [settings, setSettings] = useState<Settings>(defaultSettings);
   const [settingsHydrated, setSettingsHydrated] = useState(false);
   const [quoteIndex, setQuoteIndex] = useState(0);
@@ -357,7 +392,7 @@ export default function HomePage() {
       }
 
       try {
-        const response = await fetch("/api/admin-state");
+        const response = await fetch("/api/admin-state", { cache: "no-store" });
         if (!response.ok) {
           if (active) setSettingsHydrated(true);
           return;
@@ -392,6 +427,7 @@ export default function HomePage() {
         await fetch("/api/admin-state", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
+          cache: "no-store",
           body: JSON.stringify(settings),
         });
       } catch {

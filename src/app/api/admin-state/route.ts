@@ -1,32 +1,53 @@
-import { env } from "cloudflare:workers";
+import { get, put } from "@vercel/blob";
+import { promises as fs } from "node:fs";
+import path from "node:path";
 import {
   defaultAdminState,
   sanitizeAdminState,
+  serializeAdminState,
   type AdminState,
 } from "@/lib/admin-state";
 
-const CREATE_ADMIN_STATE_TABLE_SQL =
-  "CREATE TABLE IF NOT EXISTS admin_state (id INTEGER PRIMARY KEY CHECK (id = 1), json TEXT NOT NULL, updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP)";
-const SELECT_ADMIN_STATE_SQL = "SELECT json FROM admin_state WHERE id = 1";
-const UPSERT_ADMIN_STATE_SQL =
-  "INSERT INTO admin_state (id, json, updated_at) VALUES (1, ?, CURRENT_TIMESTAMP) ON CONFLICT(id) DO UPDATE SET json = excluded.json, updated_at = CURRENT_TIMESTAMP";
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 
-async function ensureAdminStateTable() {
-  if (!env.DB) return false;
-  await env.DB.prepare(CREATE_ADMIN_STATE_TABLE_SQL).run();
-  return true;
+const ADMIN_STATE_PATH = "state/admin-state.json";
+
+function hasBlobStore() {
+  return Boolean(process.env.BLOB_READ_WRITE_TOKEN);
+}
+
+async function readLocalAdminState(): Promise<AdminState> {
+  try {
+    const raw = await fs.readFile(path.join(process.cwd(), "content", "admin-state.json"), "utf8");
+    return sanitizeAdminState(JSON.parse(raw) as AdminState);
+  } catch {
+    return defaultAdminState;
+  }
+}
+
+async function writeLocalAdminState(state: AdminState): Promise<AdminState> {
+  await fs.mkdir(path.join(process.cwd(), "content"), { recursive: true });
+  await fs.writeFile(
+    path.join(process.cwd(), "content", "admin-state.json"),
+    serializeAdminState(state),
+    "utf8"
+  );
+  return state;
 }
 
 async function readSharedAdminState(): Promise<AdminState> {
-  if (!(await ensureAdminStateTable())) {
-    return defaultAdminState;
+  if (!hasBlobStore()) {
+    return readLocalAdminState();
   }
-  const result = await env.DB.prepare(SELECT_ADMIN_STATE_SQL).first<{ json?: string }>();
-  if (!result?.json) {
-    return defaultAdminState;
-  }
+
   try {
-    return sanitizeAdminState(JSON.parse(result.json) as AdminState);
+    const result = await get(ADMIN_STATE_PATH, { access: "private" });
+    if (!result || result.statusCode !== 200) {
+      return defaultAdminState;
+    }
+    const raw = await new Response(result.stream).text();
+    return sanitizeAdminState(JSON.parse(raw) as AdminState);
   } catch {
     return defaultAdminState;
   }
@@ -34,10 +55,16 @@ async function readSharedAdminState(): Promise<AdminState> {
 
 async function writeSharedAdminState(input: unknown): Promise<AdminState> {
   const state = sanitizeAdminState((input ?? null) as Record<string, unknown>);
-  if (!(await ensureAdminStateTable())) {
-    return state;
+  if (!hasBlobStore()) {
+    return writeLocalAdminState(state);
   }
-  await env.DB.prepare(UPSERT_ADMIN_STATE_SQL).bind(JSON.stringify(state)).run();
+
+  await put(ADMIN_STATE_PATH, serializeAdminState(state), {
+    access: "private",
+    addRandomSuffix: false,
+    allowOverwrite: true,
+    contentType: "application/json",
+  });
   return state;
 }
 
