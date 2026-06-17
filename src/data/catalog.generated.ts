@@ -484,6 +484,30 @@ export const generatedCatalog = {
       }
     },
     {
+      "id": "sunny-afternoon",
+      "name": "Sunny Afternoon",
+      "description": "Strawberry-mint gin cooler with elderflower and ginger sparkle",
+      "themes": [
+        "known-offenders"
+      ],
+      "ingredients": "2 oz gin | 0.75 oz St. Germain | 0.75 oz lemon juice | 0.5 oz simple syrup | 0.75 oz strawberry puree | 5 mint leaves | top with ginger beer",
+      "availability": [
+        "mint"
+      ],
+      "sort": 107,
+      "imageFile": "sunny-afternoon.webp",
+      "variations": [
+        {
+          "name": "Good Afternoon",
+          "change": "Add serrano for a brighter kick"
+        }
+      ],
+      "isShot": false,
+      "themeSortOverrides": {
+        "known-offenders": 8
+      }
+    },
+    {
       "id": "hot-smoky-mezcal-margarita",
       "name": "Hot and Smoky Mezcal Margarita",
       "description": "Smoky mezcal heat with bright citrus edge",

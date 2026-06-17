@@ -869,7 +869,7 @@ export default function HomePage() {
   function getShotMachineArtStyle(imageFile?: string) {
     if (!imageFile) return undefined;
     const slotOverrides: Record<string, { backgroundSize?: string; backgroundPosition?: string }> = {
-      "shot-red-headed-slut.webp": { backgroundSize: "auto 130%", backgroundPosition: "center 30%" },
+      "shot-red-headed-slut.webp": { backgroundSize: "cover", backgroundPosition: "center" },
       "shot-washington-apple.webp": { backgroundSize: "114% auto", backgroundPosition: "center" },
       "shot-red-snapper.webp": { backgroundSize: "120% auto", backgroundPosition: "center" },
       "shot-stop-light.webp": { backgroundSize: "118% auto", backgroundPosition: "center" },
@@ -889,8 +889,8 @@ export default function HomePage() {
       string,
       { backgroundSize?: string; backgroundPosition?: string }
     > = {
-      "shot-red-headed-slut.webp": { backgroundSize: "contain", backgroundPosition: "center top" },
-      "moscow-mule.webp": { backgroundSize: "contain", backgroundPosition: "center top" },
+      "shot-red-headed-slut.webp": { backgroundSize: "cover", backgroundPosition: "center" },
+      "moscow-mule.webp": { backgroundSize: "cover", backgroundPosition: "center 28%" },
       "old-fashioned.webp": { backgroundSize: "contain", backgroundPosition: "center top" },
       "boulevardier.webp": { backgroundSize: "114% auto", backgroundPosition: "center 78%" },
       "whiskey-sour.webp": { backgroundSize: "106% auto", backgroundPosition: "center 18%" },
