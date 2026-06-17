@@ -892,10 +892,15 @@ export default function HomePage() {
       "shot-red-headed-slut.webp": { backgroundSize: "contain", backgroundPosition: "center top" },
       "moscow-mule.webp": { backgroundSize: "contain", backgroundPosition: "center top" },
       "old-fashioned.webp": { backgroundSize: "contain", backgroundPosition: "center top" },
-      "negroni.webp": { backgroundSize: "contain", backgroundPosition: "center top" },
-      "coconut-pineapple-sour.webp": { backgroundSize: "contain", backgroundPosition: "center top" },
-      "white-russian.webp": { backgroundSize: "contain", backgroundPosition: "center top" },
-      "boulevardier.webp": { backgroundSize: "contain", backgroundPosition: "center top" },
+      "boulevardier.webp": { backgroundSize: "114% auto", backgroundPosition: "center 78%" },
+      "whiskey-sour.webp": { backgroundSize: "106% auto", backgroundPosition: "center 18%" },
+      "whiskey-smash.webp": { backgroundSize: "110% auto", backgroundPosition: "center 54%" },
+      "white-russian.webp": { backgroundSize: "112% auto", backgroundPosition: "center 82%" },
+      "coconut-pineapple-sour.webp": {
+        backgroundSize: "108% auto",
+        backgroundPosition: "center 74%",
+      },
+      "negroni.webp": { backgroundSize: "108% auto", backgroundPosition: "center 66%" },
     };
     if (imageFile.startsWith("shot-")) {
       return {

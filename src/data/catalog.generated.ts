@@ -873,8 +873,7 @@ export const generatedCatalog = {
       "name": "Boulevardier",
       "description": "Whiskey negroni style with deep bitter balance",
       "themes": [
-        "spirit-whiskey",
-        "spirit-liqueurs"
+        "spirit-whiskey"
       ],
       "ingredients": "1.25 oz bourbon or rye | 1 oz Campari | 1 oz sweet vermouth",
       "availability": [],
@@ -1003,8 +1002,7 @@ export const generatedCatalog = {
       "name": "Negroni",
       "description": "Equal parts bitter gin staple",
       "themes": [
-        "spirit-gin",
-        "spirit-liqueurs"
+        "spirit-gin"
       ],
       "ingredients": "1 part gin | 1 part Campari | 1 part sweet vermouth",
       "availability": [],
@@ -1111,8 +1109,7 @@ export const generatedCatalog = {
       "description": "Dessert martini with chocolate and cream",
       "themes": [
         "spirit-vodka",
-        "spirit-martinis",
-        "spirit-liqueurs"
+        "spirit-martinis"
       ],
       "ingredients": "2 to 4 oz vodka | 2 oz chocolate liqueur | 2 oz Baileys | 3 tbsp chocolate syrup | optional half and half",
       "availability": [],
@@ -1127,8 +1124,7 @@ export const generatedCatalog = {
       "description": "Agavero-vodka cosmo riff",
       "themes": [
         "spirit-vodka",
-        "spirit-martinis",
-        "spirit-liqueurs"
+        "spirit-martinis"
       ],
       "ingredients": "2 oz Agavero | 2 oz vodka | splash cranberry | splash lime juice",
       "availability": [],
@@ -1159,8 +1155,7 @@ export const generatedCatalog = {
       "description": "Smoky whiskey cocktail with St Germain and Cointreau",
       "themes": [
         "spirit-smoke",
-        "spirit-whiskey",
-        "spirit-liqueurs"
+        "spirit-whiskey"
       ],
       "ingredients": "2 oz bourbon | 1 tsp St Germain | 1 tsp Cointreau | 1 tsp simple syrup",
       "availability": [],
