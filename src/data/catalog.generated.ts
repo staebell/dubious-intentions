@@ -73,10 +73,16 @@ export const generatedCatalog = {
       "order": 25
     },
     {
+      "key": "spirit-spritz",
+      "name": "Spritz",
+      "intro": "Bubbly, bitter, citrusy, and built for long afternoons.",
+      "order": 26
+    },
+    {
       "key": "spirit-liqueurs",
       "name": "Unique Liqueurs",
       "intro": "Liqueur-led cocktails and less-common riffs.",
-      "order": 26
+      "order": 27
     }
   ],
   "drinks": [
@@ -454,7 +460,8 @@ export const generatedCatalog = {
       "name": "Cherry Spritz",
       "description": "Tart cherry spritz with prosecco lift",
       "themes": [
-        "known-offenders"
+        "known-offenders",
+        "spirit-spritz"
       ],
       "ingredients": "1 oz Aperol | 1 oz tart cherry juice | 0.5 oz lime juice | 0.5 oz grenadine | 3 oz prosecco | splash soda",
       "availability": [],
@@ -462,7 +469,8 @@ export const generatedCatalog = {
       "imageFile": "cherry-spritz.webp",
       "isShot": false,
       "themeSortOverrides": {
-        "known-offenders": 7
+        "known-offenders": 7,
+        "spirit-spritz": 6
       }
     },
     {
@@ -586,14 +594,23 @@ export const generatedCatalog = {
       "name": "Aperol Spritz",
       "description": "Effortless sparkling spritz that always goes down easy",
       "themes": [
-        "the-usual-suspects"
+        "the-usual-suspects",
+        "spirit-spritz"
       ],
       "ingredients": "3 oz prosecco | 2 oz Aperol | 1 oz soda water | orange slice",
       "availability": [],
       "sort": 27,
       "imageFile": "aperol-spritz.webp",
+      "variations": [
+        {
+          "name": "Strawberry Aperol Spritz",
+          "change": "Add strawberry-infused Aperol and a touch of lemon"
+        }
+      ],
       "isShot": false,
-      "themeSortOverrides": {}
+      "themeSortOverrides": {
+        "spirit-spritz": 1
+      }
     },
     {
       "id": "bloody-mary",
@@ -672,14 +689,17 @@ export const generatedCatalog = {
       "name": "Riviera Spritz",
       "description": "Crisp coastal spritz built for slow afternoons",
       "themes": [
-        "off-the-beaten-path"
+        "off-the-beaten-path",
+        "spirit-spritz"
       ],
       "ingredients": "2 oz dry vermouth | 3 oz prosecco | 1 oz soda water | lemon twist",
       "availability": [],
       "sort": 32,
       "imageFile": "riviera-spritz.webp",
       "isShot": false,
-      "themeSortOverrides": {}
+      "themeSortOverrides": {
+        "spirit-spritz": 7
+      }
     },
     {
       "id": "division-bell",
@@ -1232,6 +1252,81 @@ export const generatedCatalog = {
       "imageFile": "smoked-old-fashioned.webp",
       "isShot": false,
       "themeSortOverrides": {}
+    },
+    {
+      "id": "hugo-spritz",
+      "name": "Hugo Spritz",
+      "description": "Floral elderflower spritz with mint and soft citrus",
+      "themes": [
+        "spirit-spritz",
+        "spirit-liqueurs"
+      ],
+      "ingredients": "1.5 oz St. Elder | 2 mint leaves muddled | 3 to 5 oz prosecco | splash soda water | lime wheel",
+      "availability": [
+        "mint"
+      ],
+      "sort": 108,
+      "imageFile": "hugo-spritz.webp",
+      "variations": [
+        {
+          "name": "Blackberry Hugo",
+          "change": "Add muddled blackberry for a darker berry-herbal version"
+        }
+      ],
+      "isShot": false,
+      "themeSortOverrides": {
+        "spirit-spritz": 2
+      }
+    },
+    {
+      "id": "limoncello-spritz",
+      "name": "Limoncello Spritz",
+      "description": "Bright lemon spritz that feels like vacation plans",
+      "themes": [
+        "spirit-spritz",
+        "spirit-liqueurs"
+      ],
+      "ingredients": "2 oz limoncello | 3 oz prosecco | 1 oz soda water | lemon slice",
+      "availability": [],
+      "sort": 109,
+      "imageFile": "limoncello-spritz.webp",
+      "isShot": false,
+      "themeSortOverrides": {
+        "spirit-spritz": 3
+      }
+    },
+    {
+      "id": "campari-spritz",
+      "name": "Campari Spritz",
+      "description": "Bitter orange sparkle with a sharper aperitivo edge",
+      "themes": [
+        "spirit-spritz"
+      ],
+      "ingredients": "2 oz Campari | 3 oz prosecco | 1 oz soda water | orange slice",
+      "availability": [],
+      "sort": 110,
+      "imageFile": "campari-spritz.webp",
+      "isShot": false,
+      "themeSortOverrides": {
+        "spirit-spritz": 4
+      }
+    },
+    {
+      "id": "chambord-spritz",
+      "name": "Chambord Spritz",
+      "description": "Blackberry-leaning spritz with a playful berry pop",
+      "themes": [
+        "spirit-spritz",
+        "spirit-liqueurs"
+      ],
+      "ingredients": "1 oz Chambord blackberry liqueur | 3 oz white wine | 2 oz soda water | mint sprig | blackberry garnish",
+      "availability": [],
+      "sort": 111,
+      "imageFile": "chambord-spritz.webp",
+      "isShot": false,
+      "themeSortOverrides": {
+        "spirit-spritz": 5
+      }
     }
   ],
   "quotes": [

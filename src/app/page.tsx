@@ -350,6 +350,7 @@ const SPIRIT_THEME_OPTIONS = [
   { key: "spirit-vodka", label: "Vodka" },
   { key: "spirit-smoke", label: "Smoked Cocktails" },
   { key: "spirit-martinis", label: "Martinis" },
+  { key: "spirit-spritz", label: "Spritz" },
   { key: "spirit-liqueurs", label: "Unique Liqueurs" },
 ] as const;
 
@@ -901,6 +902,13 @@ export default function HomePage() {
         backgroundPosition: "center 74%",
       },
       "negroni.webp": { backgroundSize: "108% auto", backgroundPosition: "center 66%" },
+      "aperol-spritz.webp": { backgroundSize: "contain", backgroundPosition: "center 10%" },
+      "hugo-spritz.webp": { backgroundSize: "contain", backgroundPosition: "center 10%" },
+      "limoncello-spritz.webp": { backgroundSize: "contain", backgroundPosition: "center 10%" },
+      "campari-spritz.webp": { backgroundSize: "contain", backgroundPosition: "center 10%" },
+      "cherry-spritz.webp": { backgroundSize: "contain", backgroundPosition: "center 10%" },
+      "riviera-spritz.webp": { backgroundSize: "contain", backgroundPosition: "center 10%" },
+      "chambord-spritz.webp": { backgroundSize: "cover", backgroundPosition: "center 34%" },
     };
     if (imageFile.startsWith("shot-")) {
       return {
