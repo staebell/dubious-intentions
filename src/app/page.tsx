@@ -888,6 +888,12 @@ export default function HomePage() {
         backgroundSize: "114% auto",
         backgroundPosition: "center 16%",
       },
+      "shot-coconut-pineapple.png": { backgroundSize: "cover", backgroundPosition: "center" },
+      "shot-fire-up-my-pussy.png": { backgroundSize: "cover", backgroundPosition: "center 58%" },
+      "shot-double-trouble-tropical-tequila.png": {
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      },
     };
     return slotOverrides[imageFile];
   }
@@ -936,6 +942,32 @@ export default function HomePage() {
       "cherry-spritz.webp": { backgroundSize: "contain", backgroundPosition: "center 10%" },
       "riviera-spritz.webp": { backgroundSize: "contain", backgroundPosition: "center 10%" },
       "chambord-spritz.webp": { backgroundSize: "cover", backgroundPosition: "center 34%" },
+      "shot-coconut-pineapple.png": { backgroundSize: "cover", backgroundPosition: "center" },
+      "shot-fire-up-my-pussy.png": { backgroundSize: "cover", backgroundPosition: "center 60%" },
+      "shot-double-trouble-tropical-tequila.png": {
+        backgroundSize: "cover",
+        backgroundPosition: "center 28%",
+      },
+      "strawberry-limoncello-spritz.png": {
+        backgroundSize: "cover",
+        backgroundPosition: "center 20%",
+      },
+      "blueberry-pineapple-tequila-sour.png": {
+        backgroundSize: "cover",
+        backgroundPosition: "center 28%",
+      },
+      "lavender-spritz.png": { backgroundSize: "cover", backgroundPosition: "center 24%" },
+      "smoke-on-the-water.png": { backgroundSize: "cover", backgroundPosition: "center 22%" },
+      "mezcalita.png": { backgroundSize: "cover", backgroundPosition: "center 20%" },
+      "pineapple-bourbon-lemonade.png": {
+        backgroundSize: "cover",
+        backgroundPosition: "center 18%",
+      },
+      "blue-hawaiian.png": { backgroundSize: "cover", backgroundPosition: "center 44%" },
+      "hot-honey-aperol-spritz.png": {
+        backgroundSize: "cover",
+        backgroundPosition: "center 22%",
+      },
     };
     if (imageFile.startsWith("shot-")) {
       return {

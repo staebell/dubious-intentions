@@ -1623,6 +1623,184 @@ export const generatedCatalog = {
       "imageFile": "shot-pineapple-upside-down.png",
       "isShot": true,
       "themeSortOverrides": {}
+    },
+    {
+      "id": "coconut-pineapple-shots",
+      "name": "Coconut and Pineapple Shots",
+      "description": "Tropical blue shot that looks way too harmless",
+      "themes": [
+        "that-escalated-quickly"
+      ],
+      "ingredients": "1 oz coconut rum | 1 oz pineapple juice | 0.5 oz blue curacao",
+      "availability": [],
+      "sort": 135,
+      "imageFile": "shot-coconut-pineapple.png",
+      "isShot": true,
+      "themeSortOverrides": {}
+    },
+    {
+      "id": "fire-up-my-pussy",
+      "name": "Fire Up My P*ssy",
+      "description": "Blue coconut-pineapple cream shot with zero subtlety",
+      "themes": [
+        "that-escalated-quickly"
+      ],
+      "ingredients": "1 oz blue curacao | 1 oz coconut rum | 1 oz pineapple juice | 1 oz Irish cream liqueur | ice | optional pineapple wedge or cherry garnish",
+      "availability": [],
+      "sort": 136,
+      "imageFile": "shot-fire-up-my-pussy.png",
+      "isShot": true,
+      "themeSortOverrides": {}
+    },
+    {
+      "id": "double-trouble-tropical-tequila-shots",
+      "name": "Double Trouble Tropical Tequila Shots",
+      "description": "Layered tropical tequila shot that arrives ready to cause problems",
+      "themes": [
+        "that-escalated-quickly"
+      ],
+      "ingredients": "Grenadine | pineapple juice | coconut rum | tequila",
+      "availability": [],
+      "sort": 137,
+      "imageFile": "shot-double-trouble-tropical-tequila.png",
+      "isShot": true,
+      "themeSortOverrides": {}
+    },
+    {
+      "id": "strawberry-limoncello-spritz",
+      "name": "Strawberry Limoncello Spritz",
+      "description": "Strawberry citrus spritz with a rosier vacation mood",
+      "themes": [
+        "spirit-spritz"
+      ],
+      "ingredients": "1 oz Empress 1908 Elderflower Rose Gin | 2 oz prosecco | 1 oz limoncello | 1 oz club soda | 0.5 oz strawberry syrup",
+      "availability": [],
+      "sort": 138,
+      "imageFile": "strawberry-limoncello-spritz.png",
+      "isShot": false,
+      "themeSortOverrides": {
+        "spirit-spritz": 8
+      }
+    },
+    {
+      "id": "blueberry-pineapple-tequila-sour",
+      "name": "Blueberry Pineapple Tequila Sour",
+      "description": "Bright pineapple tequila sour with a blueberry foam flex",
+      "themes": [
+        "tequila-sunday"
+      ],
+      "ingredients": "2 oz tequila | 1.5 oz pineapple juice | 0.75 oz lemon juice | 0.5 oz blueberry syrup | 1 egg white",
+      "availability": [
+        "egg_white"
+      ],
+      "sort": 139,
+      "imageFile": "blueberry-pineapple-tequila-sour.png",
+      "isShot": false,
+      "themeSortOverrides": {
+        "tequila-sunday": 17
+      }
+    },
+    {
+      "id": "lavender-spritz",
+      "name": "Lavender Spritz",
+      "description": "Floral purple spritz that looks like it belongs in a dramatic montage",
+      "themes": [
+        "spirit-spritz"
+      ],
+      "ingredients": "2 oz gin | 1 oz lavender syrup | 1 oz fresh lemon juice | 3 oz club soda | fresh lavender sprigs | ice",
+      "availability": [],
+      "sort": 140,
+      "imageFile": "lavender-spritz.png",
+      "isShot": false,
+      "themeSortOverrides": {
+        "spirit-spritz": 9
+      }
+    },
+    {
+      "id": "smoke-on-the-water",
+      "name": "Smoke on the Water",
+      "description": "Blackberry mezcal build with citrus and smoke drifting through it",
+      "themes": [
+        "tequila-sunday",
+        "spirit-smoke"
+      ],
+      "ingredients": "2 oz mezcal | 1 oz blackberry syrup | 0.75 oz fresh lemon juice | club soda | garnish",
+      "availability": [],
+      "sort": 141,
+      "imageFile": "smoke-on-the-water.png",
+      "isShot": false,
+      "themeSortOverrides": {
+        "tequila-sunday": 18,
+        "spirit-smoke": 5
+      }
+    },
+    {
+      "id": "mezcalita",
+      "name": "Mezcalita",
+      "description": "Pineapple mezcal sour with ginger and lime making a very strong case for itself",
+      "themes": [
+        "tequila-sunday",
+        "spirit-smoke"
+      ],
+      "ingredients": "2 oz mezcal | 0.25 oz Cointreau | 2 oz pineapple juice | 0.5 oz ginger syrup | 0.25 oz fresh lime juice | pinch of salt or a few drops saline",
+      "availability": [],
+      "sort": 142,
+      "imageFile": "mezcalita.png",
+      "isShot": false,
+      "themeSortOverrides": {
+        "tequila-sunday": 19,
+        "spirit-smoke": 6
+      }
+    },
+    {
+      "id": "pineapple-bourbon-lemonade",
+      "name": "Pineapple Bourbon Lemonade",
+      "description": "Bourbon lemonade with pineapple brightness and porch-energy swagger",
+      "themes": [
+        "spirit-whiskey"
+      ],
+      "ingredients": "Bourbon | pineapple juice | simple syrup | lemon juice",
+      "availability": [],
+      "sort": 143,
+      "imageFile": "pineapple-bourbon-lemonade.png",
+      "isShot": false,
+      "themeSortOverrides": {
+        "spirit-whiskey": 10
+      }
+    },
+    {
+      "id": "blue-hawaiian",
+      "name": "Blue Hawaiian",
+      "description": "Electric blue pineapple-coconut rum drink that looks like a pool day sounds",
+      "themes": [
+        "cool-runnings",
+        "spirit-rum"
+      ],
+      "ingredients": "0.5 cup white rum | 0.5 cup blue curacao | 0.33 cup cream of coconut | 0.5 cup pineapple juice | 2 cups frozen pineapple | 2 cups ice optional",
+      "availability": [],
+      "sort": 144,
+      "imageFile": "blue-hawaiian.png",
+      "isShot": false,
+      "themeSortOverrides": {
+        "cool-runnings": 8,
+        "spirit-rum": 9
+      }
+    },
+    {
+      "id": "hot-honey-aperol-spritz",
+      "name": "Hot Honey Aperol Spritz",
+      "description": "A little bitter, a little spicy, and exactly the kind of thing that turns into a second round",
+      "themes": [
+        "spirit-spritz"
+      ],
+      "ingredients": "Aperol | hot honey syrup | lemon juice | soda water | prosecco",
+      "availability": [],
+      "sort": 145,
+      "imageFile": "hot-honey-aperol-spritz.png",
+      "isShot": false,
+      "themeSortOverrides": {
+        "spirit-spritz": 10
+      }
     }
   ],
   "quotes": [
