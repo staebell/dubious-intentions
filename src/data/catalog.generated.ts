@@ -1721,8 +1721,7 @@ export const generatedCatalog = {
       "name": "Smoke on the Water",
       "description": "Blackberry mezcal build with citrus and smoke drifting through it",
       "themes": [
-        "tequila-sunday",
-        "spirit-smoke"
+        "tequila-sunday"
       ],
       "ingredients": "2 oz mezcal | 1 oz blackberry syrup | 0.75 oz fresh lemon juice | club soda | garnish",
       "availability": [],
@@ -1730,8 +1729,7 @@ export const generatedCatalog = {
       "imageFile": "smoke-on-the-water.png",
       "isShot": false,
       "themeSortOverrides": {
-        "tequila-sunday": 18,
-        "spirit-smoke": 5
+        "tequila-sunday": 18
       }
     },
     {
@@ -1739,8 +1737,7 @@ export const generatedCatalog = {
       "name": "Mezcalita",
       "description": "Pineapple mezcal sour with ginger and lime making a very strong case for itself",
       "themes": [
-        "tequila-sunday",
-        "spirit-smoke"
+        "tequila-sunday"
       ],
       "ingredients": "2 oz mezcal | 0.25 oz Cointreau | 2 oz pineapple juice | 0.5 oz ginger syrup | 0.25 oz fresh lime juice | pinch of salt or a few drops saline",
       "availability": [],
@@ -1748,8 +1745,7 @@ export const generatedCatalog = {
       "imageFile": "mezcalita.png",
       "isShot": false,
       "themeSortOverrides": {
-        "tequila-sunday": 19,
-        "spirit-smoke": 6
+        "tequila-sunday": 19
       }
     },
     {

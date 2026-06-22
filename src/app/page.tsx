@@ -929,7 +929,7 @@ export default function HomePage() {
       "dark-n-stormy.png": { backgroundSize: "contain", backgroundPosition: "center 18%" },
       "pineapple-daiquiri.png": { backgroundSize: "cover", backgroundPosition: "center 32%" },
       "mai-tai.png": { backgroundSize: "cover", backgroundPosition: "center 30%" },
-      "white-russian.webp": { backgroundSize: "112% auto", backgroundPosition: "center 82%" },
+      "white-russian.webp": { backgroundSize: "cover", backgroundPosition: "center 54%" },
       "coconut-pineapple-sour.webp": {
         backgroundSize: "108% auto",
         backgroundPosition: "center 74%",
@@ -957,17 +957,11 @@ export default function HomePage() {
         backgroundPosition: "center 28%",
       },
       "lavender-spritz.png": { backgroundSize: "cover", backgroundPosition: "center 24%" },
-      "smoke-on-the-water.png": { backgroundSize: "cover", backgroundPosition: "center 22%" },
-      "mezcalita.png": { backgroundSize: "cover", backgroundPosition: "center 20%" },
-      "pineapple-bourbon-lemonade.png": {
-        backgroundSize: "cover",
-        backgroundPosition: "center 18%",
-      },
+      "smoke-on-the-water.png": { backgroundSize: "cover", backgroundPosition: "center 56%" },
+      "mezcalita.png": { backgroundSize: "cover", backgroundPosition: "center 52%" },
+      "pineapple-bourbon-lemonade.png": { backgroundSize: "cover", backgroundPosition: "center 54%" },
       "blue-hawaiian.png": { backgroundSize: "cover", backgroundPosition: "center 44%" },
-      "hot-honey-aperol-spritz.png": {
-        backgroundSize: "cover",
-        backgroundPosition: "center 22%",
-      },
+      "hot-honey-aperol-spritz.png": { backgroundSize: "cover", backgroundPosition: "center 50%" },
     };
     if (imageFile.startsWith("shot-")) {
       return {
