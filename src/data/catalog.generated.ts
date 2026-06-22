@@ -37,6 +37,12 @@ export const generatedCatalog = {
       "order": 6
     },
     {
+      "key": "that-escalated-quickly",
+      "name": "That Escalated Quickly",
+      "intro": "Some people end with shots, but why not start with them?",
+      "order": 7
+    },
+    {
       "key": "spirit-rum",
       "name": "Rum",
       "intro": "Rum-forward classics and tropical heavy hitters.",
@@ -161,7 +167,8 @@ export const generatedCatalog = {
       "name": "Horsefeather",
       "description": "Bourbon and ginger beer with bitters snap",
       "themes": [
-        "known-offenders"
+        "known-offenders",
+        "spirit-whiskey"
       ],
       "ingredients": "1.5 oz bourbon | 4 oz ginger beer | 5 heavy dashes Angostura bitters | lemon wedge or lemon juice",
       "availability": [],
@@ -259,7 +266,8 @@ export const generatedCatalog = {
       "name": "Moscow Mule",
       "description": "Cold ginger standard that always gets ordered",
       "themes": [
-        "the-usual-suspects"
+        "the-usual-suspects",
+        "spirit-vodka"
       ],
       "ingredients": "Vodka | lime or lime juice | ginger beer",
       "availability": [],
@@ -303,7 +311,8 @@ export const generatedCatalog = {
       "name": "Mojito",
       "description": "Fresh mint lime crusher",
       "themes": [
-        "the-usual-suspects"
+        "the-usual-suspects",
+        "spirit-rum"
       ],
       "ingredients": "White rum | fresh lime | sugar or simple syrup | mint leaves | club soda",
       "availability": [
@@ -345,7 +354,8 @@ export const generatedCatalog = {
       "name": "French 75",
       "description": "Bubbly citrus classic with cognac bite",
       "themes": [
-        "the-usual-suspects"
+        "the-usual-suspects",
+        "spirit-gin"
       ],
       "ingredients": "1.5 oz cognac | 0.75 oz lemon juice | 0.75 oz simple syrup | 1 oz champagne",
       "availability": [
@@ -446,7 +456,8 @@ export const generatedCatalog = {
       "name": "Painkiller",
       "description": "Dark rum pineapple coconut party lane",
       "themes": [
-        "adult-swim"
+        "adult-swim",
+        "spirit-rum"
       ],
       "ingredients": "2 oz dark rum | 4 oz pineapple juice | 1 oz orange juice | 1 oz cream of coconut | nutmeg garnish | orange or cherry garnish",
       "availability": [],
@@ -580,7 +591,8 @@ export const generatedCatalog = {
       "name": "Old Fashioned",
       "description": "Spirit-forward classic with bitters and orange oil",
       "themes": [
-        "the-usual-suspects"
+        "the-usual-suspects",
+        "spirit-whiskey"
       ],
       "ingredients": "2 oz bourbon or rye | 0.25 oz simple syrup | 2 dashes Angostura bitters | orange peel",
       "availability": [],
@@ -675,7 +687,8 @@ export const generatedCatalog = {
       "name": "Singapore Sling",
       "description": "Tropical gin classic with cherry and citrus",
       "themes": [
-        "off-the-beaten-path"
+        "off-the-beaten-path",
+        "spirit-gin"
       ],
       "ingredients": "1.5 oz gin | 0.5 oz cherry liqueur | 0.25 oz Benedictine | 0.25 oz Cointreau | 0.5 oz lime juice | pineapple juice | dash bitters",
       "availability": [],
@@ -720,7 +733,7 @@ export const generatedCatalog = {
       "name": "Red-headed Slut",
       "description": "Quick peach-jager-cran hit",
       "themes": [
-        "the-usual-suspects"
+        "that-escalated-quickly"
       ],
       "ingredients": "0.33 oz peach schnapps | 0.5 oz Jager | 0.33 oz cranberry juice",
       "availability": [],
@@ -734,7 +747,7 @@ export const generatedCatalog = {
       "name": "Washington Apple",
       "description": "Tart apple-crown-cran shot",
       "themes": [
-        "the-usual-suspects"
+        "that-escalated-quickly"
       ],
       "ingredients": "1 oz Crown | 1 oz sour apple schnapps | 1 oz cranberry juice",
       "availability": [],
@@ -748,7 +761,7 @@ export const generatedCatalog = {
       "name": "Red Snapper",
       "description": "Whiskey and amaretto with cranberry",
       "themes": [
-        "the-usual-suspects"
+        "that-escalated-quickly"
       ],
       "ingredients": "1 oz whiskey | 1 oz amaretto | 2 oz cranberry juice",
       "availability": [],
@@ -762,7 +775,7 @@ export const generatedCatalog = {
       "name": "Stop Light",
       "description": "Party shot trio with bright color hit",
       "themes": [
-        "the-usual-suspects"
+        "that-escalated-quickly"
       ],
       "ingredients": "3.5 shots vodka | cranberry | orange juice | melon liqueur",
       "availability": [],
@@ -776,7 +789,7 @@ export const generatedCatalog = {
       "name": "Tequila Slammer",
       "description": "Slam shot with soda finish",
       "themes": [
-        "the-usual-suspects"
+        "that-escalated-quickly"
       ],
       "ingredients": "1 oz tequila | 1 oz ginger ale or Sprite | pour and slam",
       "availability": [],
@@ -790,7 +803,7 @@ export const generatedCatalog = {
       "name": "Irish Car Bomb",
       "description": "Classic drop shot",
       "themes": [
-        "the-usual-suspects"
+        "that-escalated-quickly"
       ],
       "ingredients": "0.5 oz Jameson | 0.5 oz Bailey's | drop into Guinness",
       "availability": [],
@@ -804,7 +817,7 @@ export const generatedCatalog = {
       "name": "Jager Bomb",
       "description": "Drop shot energy boost",
       "themes": [
-        "the-usual-suspects"
+        "that-escalated-quickly"
       ],
       "ingredients": "Shot of Jager | glass of Red Bull",
       "availability": [],
@@ -818,7 +831,7 @@ export const generatedCatalog = {
       "name": "Vegas Bomb",
       "description": "The loud one from the bombs lineup",
       "themes": [
-        "the-usual-suspects"
+        "that-escalated-quickly"
       ],
       "ingredients": "Shot of Crown | cranberry | peach schnapps | Red Bull | drop and drink",
       "availability": [],
@@ -832,7 +845,7 @@ export const generatedCatalog = {
       "name": "NAC Bomb",
       "description": "Cognac bomb variation",
       "themes": [
-        "the-usual-suspects"
+        "that-escalated-quickly"
       ],
       "ingredients": "Shot of Cognac | glass of Red Bull",
       "availability": [],
@@ -846,7 +859,7 @@ export const generatedCatalog = {
       "name": "Flaming Dr Pepper",
       "description": "Fire-forward amaretto bomb",
       "themes": [
-        "the-usual-suspects"
+        "that-escalated-quickly"
       ],
       "ingredients": "0.75 shot amaretto | 0.25 shot 151 | light on fire | drop in beer",
       "availability": [],
@@ -860,8 +873,7 @@ export const generatedCatalog = {
       "name": "Hurricane",
       "description": "Passion fruit rum classic with citrus and grenadine",
       "themes": [
-        "spirit-rum",
-        "spirit-martinis"
+        "spirit-rum"
       ],
       "ingredients": "2 oz light rum | 2 oz dark rum | 1 oz lime juice | 1 oz orange juice | 0.5 oz passion fruit puree | 0.5 oz simple syrup | splash grenadine",
       "availability": [],
@@ -887,14 +899,14 @@ export const generatedCatalog = {
     {
       "id": "mai-tai",
       "name": "Mai Tai",
-      "description": "Classic island build with rum",
+      "description": "Classic island build with rum, curacao, and citrus",
       "themes": [
-        "curacao"
+        "spirit-rum"
       ],
-      "ingredients": "spirit-rum",
+      "ingredients": "1.5 oz light rum | 0.75 oz orange curacao | 0.75 oz lime juice | 1.5 oz pineapple juice | 0.5 oz orange juice | top with 0.5 oz dark rum",
       "availability": [],
-      "sort": 0,
-      "imageFile": "and citrus",
+      "sort": 82,
+      "imageFile": "mai-tai.png",
       "isShot": false,
       "themeSortOverrides": {}
     },
@@ -1076,7 +1088,6 @@ export const generatedCatalog = {
       "name": "Dirty Martini",
       "description": "Olive brine martini with classic bite",
       "themes": [
-        "spirit-vodka",
         "spirit-martinis"
       ],
       "ingredients": "6 oz vodka | dash dry vermouth | 1 oz olive brine | green olives",
@@ -1091,7 +1102,6 @@ export const generatedCatalog = {
       "name": "Cosmopolitan",
       "description": "Citrus cranberry martini mainstay",
       "themes": [
-        "spirit-vodka",
         "spirit-martinis"
       ],
       "ingredients": "2 oz vodka | 1 oz cranberry juice | 0.75 oz lime juice | 0.75 oz triple sec | orange twist",
@@ -1106,7 +1116,6 @@ export const generatedCatalog = {
       "name": "Blue Sky",
       "description": "Bright blue martini-style vodka build",
       "themes": [
-        "spirit-vodka",
         "spirit-martinis"
       ],
       "ingredients": "vodka | blue curacao | sweet vermouth | green olive or lemon",
@@ -1121,9 +1130,7 @@ export const generatedCatalog = {
       "name": "French Martini",
       "description": "Pineapple Chambord vodka martini",
       "themes": [
-        "spirit-vodka",
-        "spirit-martinis",
-        "spirit-liqueurs"
+        "spirit-martinis"
       ],
       "ingredients": "2 oz vodka | 1 oz pineapple juice | 0.5 oz Chambord",
       "availability": [],
@@ -1137,7 +1144,6 @@ export const generatedCatalog = {
       "name": "Lemon Drop Martini",
       "description": "Bright lemon martini with sugared rim",
       "themes": [
-        "spirit-vodka",
         "spirit-martinis"
       ],
       "ingredients": "1.5 oz vodka | 0.5 oz Cointreau | 0.5 oz lemon juice | 1 tsp simple syrup | sugar rim | lemon twist",
@@ -1152,7 +1158,6 @@ export const generatedCatalog = {
       "name": "Chocolate Martini",
       "description": "Dessert martini with chocolate and cream",
       "themes": [
-        "spirit-vodka",
         "spirit-martinis"
       ],
       "ingredients": "2 to 4 oz vodka | 2 oz chocolate liqueur | 2 oz Baileys | 3 tbsp chocolate syrup | optional half and half",
@@ -1167,7 +1172,6 @@ export const generatedCatalog = {
       "name": "Aphrodisiac Cosmo",
       "description": "Agavero-vodka cosmo riff",
       "themes": [
-        "spirit-vodka",
         "spirit-martinis"
       ],
       "ingredients": "2 oz Agavero | 2 oz vodka | splash cranberry | splash lime juice",
@@ -1183,8 +1187,7 @@ export const generatedCatalog = {
       "description": "Gin and limoncello martini with mint",
       "themes": [
         "spirit-gin",
-        "spirit-martinis",
-        "spirit-liqueurs"
+        "spirit-martinis"
       ],
       "ingredients": "2 oz gin | 1.5 oz limoncello | 0.5 oz lemon juice | a few mint leaves",
       "availability": [],
@@ -1258,8 +1261,7 @@ export const generatedCatalog = {
       "name": "Hugo Spritz",
       "description": "Floral elderflower spritz with mint and soft citrus",
       "themes": [
-        "spirit-spritz",
-        "spirit-liqueurs"
+        "spirit-spritz"
       ],
       "ingredients": "1.5 oz St. Elder | 2 mint leaves muddled | 3 to 5 oz prosecco | splash soda water | lime wheel",
       "availability": [
@@ -1283,8 +1285,7 @@ export const generatedCatalog = {
       "name": "Limoncello Spritz",
       "description": "Bright lemon spritz that feels like vacation plans",
       "themes": [
-        "spirit-spritz",
-        "spirit-liqueurs"
+        "spirit-spritz"
       ],
       "ingredients": "2 oz limoncello | 3 oz prosecco | 1 oz soda water | lemon slice",
       "availability": [],
@@ -1316,8 +1317,7 @@ export const generatedCatalog = {
       "name": "Chambord Spritz",
       "description": "Blackberry-leaning spritz with a playful berry pop",
       "themes": [
-        "spirit-spritz",
-        "spirit-liqueurs"
+        "spirit-spritz"
       ],
       "ingredients": "1 oz Chambord blackberry liqueur | 3 oz white wine | 2 oz soda water | mint sprig | blackberry garnish",
       "availability": [],
@@ -1327,6 +1327,302 @@ export const generatedCatalog = {
       "themeSortOverrides": {
         "spirit-spritz": 5
       }
+    },
+    {
+      "id": "dark-n-stormy",
+      "name": "Dark n Stormy",
+      "description": "Dark rum and ginger beer with the right amount of menace",
+      "themes": [
+        "spirit-rum"
+      ],
+      "ingredients": "2 oz dark rum | 0.5 oz lime juice | 4 oz ginger beer",
+      "availability": [],
+      "sort": 112,
+      "imageFile": "dark-n-stormy.png",
+      "isShot": false,
+      "themeSortOverrides": {}
+    },
+    {
+      "id": "anejo-highball",
+      "name": "Anejo Highball",
+      "description": "Aged rum highball with citrus and bitters",
+      "themes": [
+        "spirit-rum"
+      ],
+      "ingredients": "1.5 oz aged rum | 0.5 oz triple sec | 0.25 oz lime juice | 2 dashes bitters | 4 oz ginger beer",
+      "availability": [],
+      "sort": 113,
+      "imageFile": "anejo-highball.png",
+      "isShot": false,
+      "themeSortOverrides": {}
+    },
+    {
+      "id": "manhattan",
+      "name": "Manhattan",
+      "description": "Whiskey and vermouth nightcap energy",
+      "themes": [
+        "spirit-whiskey"
+      ],
+      "ingredients": "2 oz rye whiskey | 1 oz sweet vermouth | 2 dashes Angostura bitters | 1 maraschino cherry | orange twist",
+      "availability": [],
+      "sort": 114,
+      "imageFile": "manhattan.png",
+      "isShot": false,
+      "themeSortOverrides": {}
+    },
+    {
+      "id": "long-island-iced-tea",
+      "name": "Long Island Iced Tea",
+      "description": "The classic that pretends to be casual and absolutely is not",
+      "themes": [
+        "the-usual-suspects"
+      ],
+      "ingredients": "0.5 oz gin | 0.5 oz vodka | 0.5 oz white rum | 0.5 oz tequila | 1 oz lemon juice | 1 oz simple syrup | 0.5 oz triple sec | splash of coke",
+      "availability": [],
+      "sort": 115,
+      "imageFile": "long-island-iced-tea.png",
+      "isShot": false,
+      "themeSortOverrides": {}
+    },
+    {
+      "id": "french-connection",
+      "name": "French Connection",
+      "description": "Cognac and amaretto with smooth after-dinner swagger",
+      "themes": [
+        "spirit-liqueurs"
+      ],
+      "ingredients": "2 oz cognac | 1 oz amaretto | lemon or orange twist",
+      "availability": [],
+      "sort": 116,
+      "imageFile": "french-connection.png",
+      "isShot": false,
+      "themeSortOverrides": {}
+    },
+    {
+      "id": "between-the-sheets",
+      "name": "Between the Sheets",
+      "description": "Cognac-rum-orange split with sharp citrus lift",
+      "themes": [
+        "spirit-liqueurs"
+      ],
+      "ingredients": "1 oz cognac | 1 oz light rum | 1 oz triple sec | 0.25 oz lemon juice | orange peel",
+      "availability": [],
+      "sort": 117,
+      "imageFile": "between-the-sheets.png",
+      "isShot": false,
+      "themeSortOverrides": {}
+    },
+    {
+      "id": "fontainebleau-sidecar-cocktail",
+      "name": "Fontainebleau Sidecar Cocktail",
+      "description": "Agavero-kissed sidecar riff with a grand finish",
+      "themes": [
+        "spirit-liqueurs"
+      ],
+      "ingredients": "2 oz bourbon | 0.5 oz triple sec | 0.5 oz Agavero | float 1 tsp Grand Marnier",
+      "availability": [],
+      "sort": 118,
+      "imageFile": "fontainebleau-sidecar-cocktail.png",
+      "isShot": false,
+      "themeSortOverrides": {}
+    },
+    {
+      "id": "clover-club",
+      "name": "Clover Club",
+      "description": "Agavero-club riff with egg white and grenadine",
+      "themes": [
+        "spirit-liqueurs"
+      ],
+      "ingredients": "1.5 oz gin | 1 egg | 0.5 oz Agavero | 2 tsp grenadine",
+      "availability": [
+        "egg_white"
+      ],
+      "sort": 119,
+      "imageFile": "clover-club.png",
+      "isShot": false,
+      "themeSortOverrides": {}
+    },
+    {
+      "id": "pre-siesta",
+      "name": "Pre Siesta",
+      "description": "Aperol-tequila starter with orange bitters snap",
+      "themes": [
+        "tequila-sunday"
+      ],
+      "ingredients": "1.5 oz reposado tequila | 0.5 oz Aperol | 0.66 oz orange liqueur | 2 dashes orange bitters",
+      "availability": [],
+      "sort": 120,
+      "imageFile": "pre-siesta.png",
+      "isShot": false,
+      "themeSortOverrides": {
+        "tequila-sunday": 11
+      }
+    },
+    {
+      "id": "two-one-two",
+      "name": "Two-One-Two",
+      "description": "Grapefruit-heavy tequila and Aperol refresher",
+      "themes": [
+        "tequila-sunday"
+      ],
+      "ingredients": "2 oz reposado tequila | 1 oz Aperol | 2 oz grapefruit juice",
+      "availability": [],
+      "sort": 121,
+      "imageFile": "two-one-two.png",
+      "isShot": false,
+      "themeSortOverrides": {
+        "tequila-sunday": 12
+      }
+    },
+    {
+      "id": "cantarito",
+      "name": "Cantarito",
+      "description": "Citrus-loaded agave cooler with grapefruit soda pop",
+      "themes": [
+        "tequila-sunday"
+      ],
+      "ingredients": "2 oz tequila | 1 oz orange juice | 0.5 oz lemon juice | 0.5 oz lime juice | 1 pinch of salt | 4 oz grapefruit soda",
+      "availability": [],
+      "sort": 122,
+      "imageFile": "cantarito.png",
+      "isShot": false,
+      "themeSortOverrides": {
+        "tequila-sunday": 13
+      }
+    },
+    {
+      "id": "siesta-cocktail",
+      "name": "Siesta Cocktail",
+      "description": "Campari-tequila citrus riff with real backbone",
+      "themes": [
+        "tequila-sunday"
+      ],
+      "ingredients": "2 oz tequila blanco | 0.5 oz Campari | 0.5 oz grapefruit juice | 0.5 oz lime juice | 0.5 oz simple syrup | garnish with lemon or lime",
+      "availability": [],
+      "sort": 123,
+      "imageFile": "siesta-cocktail.png",
+      "isShot": false,
+      "themeSortOverrides": {
+        "tequila-sunday": 14
+      }
+    },
+    {
+      "id": "howlapeno",
+      "name": "Howlapeno",
+      "description": "Peach-pineapple tequila number with jalapeno bite",
+      "themes": [
+        "tequila-sunday"
+      ],
+      "ingredients": "1.5 oz blanco tequila | 0.25 oz peach syrup | 1 oz pineapple juice | lime soda | jalapenos",
+      "availability": [
+        "jalapeno"
+      ],
+      "sort": 124,
+      "imageFile": "howlapeno.png",
+      "isShot": false,
+      "themeSortOverrides": {
+        "tequila-sunday": 15
+      }
+    },
+    {
+      "id": "sour-cherry-margarita",
+      "name": "Sour Cherry Margarita",
+      "description": "Smoky cherry margarita with salted edge",
+      "themes": [
+        "tequila-sunday"
+      ],
+      "ingredients": "mezcal | orange liquor | cherry puree | smoked salt rim",
+      "availability": [],
+      "sort": 125,
+      "imageFile": "sour-cherry-margarita.png",
+      "isShot": false,
+      "themeSortOverrides": {
+        "tequila-sunday": 16
+      }
+    },
+    {
+      "id": "pineapple-daiquiri",
+      "name": "Pineapple Daiquiri",
+      "description": "Frozen pineapple daiquiri that keeps pool energy year-round",
+      "themes": [
+        "cool-runnings"
+      ],
+      "ingredients": "rum | frozen pineapples | pineapple juice (optional) | lime juice | simple syrup | blend with ice",
+      "availability": [],
+      "sort": 126,
+      "imageFile": "pineapple-daiquiri.png",
+      "isShot": false,
+      "themeSortOverrides": {}
+    },
+    {
+      "id": "kamikaze",
+      "name": "Kamikaze",
+      "description": "Clean citrus shot with zero patience",
+      "themes": [
+        "that-escalated-quickly"
+      ],
+      "ingredients": "0.5 oz vodka | 0.25 oz triple sec | 0.25 oz lime juice",
+      "availability": [],
+      "sort": 130,
+      "imageFile": "shot-kamikaze.png",
+      "isShot": true,
+      "themeSortOverrides": {}
+    },
+    {
+      "id": "lemon-drop-shot",
+      "name": "Lemon Drop",
+      "description": "Sugary citrus shot that lies about how easy it is",
+      "themes": [
+        "that-escalated-quickly"
+      ],
+      "ingredients": "1.5 oz vodka | sugar | lemon wedge",
+      "availability": [],
+      "sort": 131,
+      "imageFile": "shot-lemon-drop.png",
+      "isShot": true,
+      "themeSortOverrides": {}
+    },
+    {
+      "id": "water-moccasin",
+      "name": "Water Moccasin",
+      "description": "Peach-crown party shot with a little bite",
+      "themes": [
+        "that-escalated-quickly"
+      ],
+      "ingredients": "0.25 oz peach schnapps | 0.25 oz Crown | 0.25 oz triple sec | 0.25 oz sweet and sour",
+      "availability": [],
+      "sort": 132,
+      "imageFile": "shot-water-moccasin.png",
+      "isShot": true,
+      "themeSortOverrides": {}
+    },
+    {
+      "id": "melon-ball",
+      "name": "Melon Ball",
+      "description": "Melon-pineapple-vodka shot that goes down suspiciously fast",
+      "themes": [
+        "that-escalated-quickly"
+      ],
+      "ingredients": "0.25 oz melon liqueur | 0.25 oz pineapple juice | 0.5 oz vodka",
+      "availability": [],
+      "sort": 133,
+      "imageFile": "shot-melon-ball.png",
+      "isShot": true,
+      "themeSortOverrides": {}
+    },
+    {
+      "id": "pineapple-upside-down",
+      "name": "Pineapple Upside Down",
+      "description": "Cake-energy shot with pineapple and cherry",
+      "themes": [
+        "that-escalated-quickly"
+      ],
+      "ingredients": "0.75 oz vodka | 0.5 oz bourbon | 0.25 oz peach schnapps | 0.5 oz pineapple juice | splash of cherry juice | splash of grenadine",
+      "availability": [],
+      "sort": 134,
+      "imageFile": "shot-pineapple-upside-down.png",
+      "isShot": true,
+      "themeSortOverrides": {}
     }
   ],
   "quotes": [

@@ -880,6 +880,14 @@ export default function HomePage() {
       "shot-vegas-bomb.webp": { backgroundSize: "auto 124%", backgroundPosition: "center 24%" },
       "shot-nac-bomb.webp": { backgroundSize: "114% auto", backgroundPosition: "center" },
       "shot-flaming-dr-pepper.webp": { backgroundSize: "118% auto", backgroundPosition: "center" },
+      "shot-kamikaze.png": { backgroundSize: "116% auto", backgroundPosition: "center" },
+      "shot-water-moccasin.png": { backgroundSize: "118% auto", backgroundPosition: "center" },
+      "shot-melon-ball.png": { backgroundSize: "118% auto", backgroundPosition: "center" },
+      "shot-lemon-drop.png": { backgroundSize: "118% auto", backgroundPosition: "center" },
+      "shot-pineapple-upside-down.png": {
+        backgroundSize: "114% auto",
+        backgroundPosition: "center 16%",
+      },
     };
     return slotOverrides[imageFile];
   }
@@ -893,9 +901,28 @@ export default function HomePage() {
       "shot-red-headed-slut.webp": { backgroundSize: "cover", backgroundPosition: "center" },
       "moscow-mule.webp": { backgroundSize: "cover", backgroundPosition: "center 28%" },
       "old-fashioned.webp": { backgroundSize: "contain", backgroundPosition: "center top" },
+      "manhattan.png": { backgroundSize: "contain", backgroundPosition: "center top" },
       "boulevardier.webp": { backgroundSize: "114% auto", backgroundPosition: "center 78%" },
       "whiskey-sour.webp": { backgroundSize: "106% auto", backgroundPosition: "center 18%" },
       "whiskey-smash.webp": { backgroundSize: "110% auto", backgroundPosition: "center 54%" },
+      "long-island-iced-tea.png": { backgroundSize: "contain", backgroundPosition: "center 12%" },
+      "french-connection.png": { backgroundSize: "contain", backgroundPosition: "center top" },
+      "between-the-sheets.png": { backgroundSize: "contain", backgroundPosition: "center top" },
+      "fontainebleau-sidecar-cocktail.png": {
+        backgroundSize: "contain",
+        backgroundPosition: "center top",
+      },
+      "clover-club.png": { backgroundSize: "contain", backgroundPosition: "center 20%" },
+      "pre-siesta.png": { backgroundSize: "cover", backgroundPosition: "center 34%" },
+      "two-one-two.png": { backgroundSize: "cover", backgroundPosition: "center 36%" },
+      "cantarito.png": { backgroundSize: "cover", backgroundPosition: "center 32%" },
+      "siesta-cocktail.png": { backgroundSize: "cover", backgroundPosition: "center 34%" },
+      "howlapeno.png": { backgroundSize: "cover", backgroundPosition: "center 34%" },
+      "sour-cherry-margarita.png": { backgroundSize: "cover", backgroundPosition: "center 38%" },
+      "anejo-highball.png": { backgroundSize: "contain", backgroundPosition: "center 18%" },
+      "dark-n-stormy.png": { backgroundSize: "contain", backgroundPosition: "center 18%" },
+      "pineapple-daiquiri.png": { backgroundSize: "cover", backgroundPosition: "center 32%" },
+      "mai-tai.png": { backgroundSize: "cover", backgroundPosition: "center 30%" },
       "white-russian.webp": { backgroundSize: "112% auto", backgroundPosition: "center 82%" },
       "coconut-pineapple-sour.webp": {
         backgroundSize: "108% auto",
@@ -1140,10 +1167,6 @@ export default function HomePage() {
         <div className="cover-copy">
           <h1>Dubious Intentions</h1>
           <p className="tagline">Inebriation Awaits</p>
-          <p className="cover-house-line">
-            The Staebell&apos;s house menu to ensure you have a night to remember...or one you can&apos;t
-            remember.
-          </p>
           <div className="cover-actions">
             <button type="button" className="enter-button" onClick={scrollToHub}>
               Enter the Menu
