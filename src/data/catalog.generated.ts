@@ -1801,6 +1801,64 @@ export const generatedCatalog = {
       "themeSortOverrides": {
         "spirit-spritz": 10
       }
+    },
+    {
+      "id": "coconut-spritz",
+      "name": "Coconut Spritz",
+      "description": "Coconut-lime spritz with bubbles and vacation brain",
+      "themes": [
+        "adult-swim",
+        "spirit-spritz",
+        "spirit-rum"
+      ],
+      "ingredients": "Coconut rum | coconut cream | lime juice | soda water | prosecco",
+      "availability": [],
+      "sort": 146,
+      "imageFile": "coconut-spritz.png",
+      "isShot": false,
+      "themeSortOverrides": {
+        "adult-swim": 6,
+        "spirit-spritz": 11,
+        "spirit-rum": 10
+      }
+    },
+    {
+      "id": "smoky-cucumber-spritz",
+      "name": "Smoky Cucumber Spritz",
+      "description": "Cool cucumber mint spritz with mezcal underneath the charm",
+      "themes": [
+        "tequila-sunday",
+        "spirit-spritz",
+        "spirit-smoke"
+      ],
+      "ingredients": "2 oz mezcal | 0.75 oz agave nectar | 0.75 oz lime juice | 2 slices cucumber | 8 mint leaves | club soda to top | mint sprig garnish",
+      "availability": [
+        "mint"
+      ],
+      "sort": 147,
+      "imageFile": "smoky-cucumber-spritz.png",
+      "isShot": false,
+      "themeSortOverrides": {
+        "tequila-sunday": 20,
+        "spirit-spritz": 12,
+        "spirit-smoke": 7
+      }
+    },
+    {
+      "id": "blueberry-lavender-spritz",
+      "name": "Blueberry Lavender Spritz",
+      "description": "Berry-floral spritz with a little twilight energy",
+      "themes": [
+        "spirit-spritz"
+      ],
+      "ingredients": "0.25 cup fresh blueberries | 1 oz elderflower liqueur | 0.75 oz lavender syrup | prosecco",
+      "availability": [],
+      "sort": 148,
+      "imageFile": "blueberry-lavender-spritz.png",
+      "isShot": false,
+      "themeSortOverrides": {
+        "spirit-spritz": 13
+      }
     }
   ],
   "quotes": [
