@@ -911,7 +911,6 @@ export default function HomePage() {
       "boulevardier.webp": { backgroundSize: "114% auto", backgroundPosition: "center 78%" },
       "whiskey-sour.webp": { backgroundSize: "106% auto", backgroundPosition: "center 18%" },
       "whiskey-smash.webp": { backgroundSize: "110% auto", backgroundPosition: "center 54%" },
-      "long-island-iced-tea.png": { backgroundSize: "contain", backgroundPosition: "center 12%" },
       "french-connection.png": { backgroundSize: "contain", backgroundPosition: "center top" },
       "between-the-sheets.png": { backgroundSize: "contain", backgroundPosition: "center top" },
       "fontainebleau-sidecar-cocktail.png": {
@@ -925,11 +924,9 @@ export default function HomePage() {
       "siesta-cocktail.png": { backgroundSize: "cover", backgroundPosition: "center 34%" },
       "howlapeno.png": { backgroundSize: "cover", backgroundPosition: "center 34%" },
       "sour-cherry-margarita.png": { backgroundSize: "cover", backgroundPosition: "center 38%" },
-      "anejo-highball.png": { backgroundSize: "contain", backgroundPosition: "center 18%" },
       "dark-n-stormy.png": { backgroundSize: "contain", backgroundPosition: "center 18%" },
       "pineapple-daiquiri.png": { backgroundSize: "cover", backgroundPosition: "center 32%" },
       "mai-tai.png": { backgroundSize: "cover", backgroundPosition: "center 30%" },
-      "white-russian.webp": { backgroundSize: "cover", backgroundPosition: "center 54%" },
       "coconut-pineapple-sour.webp": {
         backgroundSize: "108% auto",
         backgroundPosition: "center 74%",
@@ -940,17 +937,12 @@ export default function HomePage() {
       "limoncello-spritz.webp": { backgroundSize: "contain", backgroundPosition: "center 10%" },
       "campari-spritz.webp": { backgroundSize: "contain", backgroundPosition: "center 10%" },
       "cherry-spritz.webp": { backgroundSize: "contain", backgroundPosition: "center 10%" },
-      "riviera-spritz.webp": { backgroundSize: "contain", backgroundPosition: "center 10%" },
       "chambord-spritz.webp": { backgroundSize: "cover", backgroundPosition: "center 34%" },
       "shot-coconut-pineapple.png": { backgroundSize: "cover", backgroundPosition: "center" },
       "shot-fire-up-my-pussy.png": { backgroundSize: "cover", backgroundPosition: "center 60%" },
       "shot-double-trouble-tropical-tequila.png": {
         backgroundSize: "cover",
         backgroundPosition: "center 28%",
-      },
-      "strawberry-limoncello-spritz.png": {
-        backgroundSize: "cover",
-        backgroundPosition: "center 20%",
       },
       "blueberry-pineapple-tequila-sour.png": {
         backgroundSize: "cover",
@@ -961,7 +953,6 @@ export default function HomePage() {
       "mezcalita.png": { backgroundSize: "cover", backgroundPosition: "center 52%" },
       "pineapple-bourbon-lemonade.png": { backgroundSize: "cover", backgroundPosition: "center 54%" },
       "blue-hawaiian.png": { backgroundSize: "cover", backgroundPosition: "center 44%" },
-      "hot-honey-aperol-spritz.png": { backgroundSize: "cover", backgroundPosition: "center 50%" },
     };
     if (imageFile.startsWith("shot-")) {
       return {

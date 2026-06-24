@@ -698,23 +698,6 @@ export const generatedCatalog = {
       "themeSortOverrides": {}
     },
     {
-      "id": "riviera-spritz",
-      "name": "Riviera Spritz",
-      "description": "Crisp coastal spritz built for slow afternoons",
-      "themes": [
-        "off-the-beaten-path",
-        "spirit-spritz"
-      ],
-      "ingredients": "2 oz dry vermouth | 3 oz prosecco | 1 oz soda water | lemon twist",
-      "availability": [],
-      "sort": 32,
-      "imageFile": "riviera-spritz.webp",
-      "isShot": false,
-      "themeSortOverrides": {
-        "spirit-spritz": 7
-      }
-    },
-    {
       "id": "division-bell",
       "name": "Division Bell",
       "description": "Smoky mezcal with maraschino and citrus balance",
@@ -1019,7 +1002,7 @@ export const generatedCatalog = {
       "ingredients": "2 oz vodka | 2 oz coffee liqueur | 2 oz heavy cream",
       "availability": [],
       "sort": 90,
-      "imageFile": "white-russian.webp",
+      "imageFile": "white-russian.png",
       "isShot": false,
       "themeSortOverrides": {}
     },
